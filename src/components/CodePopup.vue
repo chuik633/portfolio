@@ -34,10 +34,10 @@
 .code-popup {
   position: fixed;
   z-index: 10;
-  width: 94vw;
-  height: 98vh;
-  top: 3vh;
-  left: 3vw;
+  width: 100vw;
+  height: 100vh;
+  top: 0vh;
+  left: 0vw;
   border: 0.5px solid black;
   display: flex;
   flex-direction: column;

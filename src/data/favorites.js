@@ -1,0 +1,17 @@
+export const favorites = [
+  { name: "sentimentplot", link: "", ext: "gif" },
+  { name: "greyday", link: "", ext: "gif" },
+  { name: "colorfashion", link: "", ext: "gif" },
+  { name: "wigglyfont", link: "", ext: "gif" },
+  { name: "soundstories", link: "", ext: "gif" },
+  { name: "tables", link: "", ext: "gif" },
+  { name: "sootsprites", link: "", ext: "gif" },
+  { name: "puzzle", link: "", ext: "png" },
+  { name: "artcode", link: "", ext: "gif" },
+  { name: "noguchi", link: "", ext: "gif" },
+  { name: "papercity bts", link: "", ext: "jpg" },
+  { name: "papercity full", link: "", ext: "jpg" },
+  { name: "papercity room", link: "", ext: "jpg" },
+  { name: "moia e", link: "", ext: "gif" },
+  { name: "soundstories processing", link: "", ext: "gif" },
+];
