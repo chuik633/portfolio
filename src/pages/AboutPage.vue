@@ -64,37 +64,42 @@ import { favorites } from "../data/favorites.js";
 
 const numSteps = 300;
 const fontSize = ref(100);
-const yShift = ref(40);
+const yShift = ref(30);
 const fontScale = d3.scaleLinear().domain([0, numSteps]).range([80, 24]);
 const startW = 20;
 let animationtimer = null;
-const topBoundary = 30;
+const topBoundary = 0;
+const speed = 0.1;
 const bottomBoundary = window.innerHeight - 80;
 function onStepEnter({ index }) {
-  if (index >= numSteps * 0.9) {
+  if (index >= numSteps - 2) {
+    console.log(index);
     if (animationtimer) {
       return;
     }
     animationtimer = d3.timer((elapsed) => {
       let dy;
-      let speed = 0.3;
-      d3.selectAll(".img-node").style("top", (d, i) => {
-        if (i % 2 == 0) {
-          dy = -speed;
-          if (d.y < topBoundary) {
-            d.y = bottomBoundary;
+      d3.selectAll(".img-node")
+        .style("left", (d) => {
+          return `${d.x1}px`;
+        })
+        .style("top", (d, i) => {
+          if (i % 2 == 0) {
+            dy = -speed;
+            if (d.y < topBoundary) {
+              d.y = bottomBoundary;
+            }
+          } else {
+            dy = speed;
+            if (d.y > bottomBoundary) {
+              d.y = topBoundary;
+            }
           }
-        } else {
-          dy = speed;
-          if (d.y > bottomBoundary) {
-            d.y = topBoundary;
-          }
-        }
-        d.y += dy;
-        return `${d.y}px`;
-      });
+          d.y += dy;
+          return `${d.y}px`;
+        });
+      // return;
     });
-    return;
   } else {
     if (animationtimer != null) {
       animationtimer.stop();
@@ -102,9 +107,9 @@ function onStepEnter({ index }) {
     }
   }
   fontSize.value = fontScale(index);
-  const progress = index / numSteps;
+  const progress = (index - 1) / numSteps;
   d3.select(".about-scroll").style("top", `calc( ${(1 - progress) * 100}%)`);
-  yShift.value = (1 - progress ** 3) * 40;
+  yShift.value = (1 - progress ** 3) * 30;
   d3.selectAll(".img-node")
     .style("width", (d) => `${startW + (d.endW - startW) * progress}px`)
     .style("top", (d) => {
@@ -118,9 +123,7 @@ function onStepEnter({ index }) {
     })
     .style("transform", (d) => {
       const interp = d3.interpolateNumber(0, d.endAngle);
-      return `translate(-50%, -50%) rotate(${Math.floor(
-        interp(progress ** 3)
-      )}deg) `;
+      return `rotate(${Math.floor(interp(progress ** 3))}deg) `;
     })
     .style("pointer-events", () => {
       if (progress > 0.8) {
@@ -136,7 +139,7 @@ onMounted(async () => {
   const ch = window.innerHeight - 80;
 
   const cx = cw / 2;
-  const cy = ch * 0.4;
+  const cy = ch * 0.3;
 
   //move out
   const r0 = 200;
@@ -149,12 +152,13 @@ onMounted(async () => {
   let righty = 80;
   favorites.forEach((d, i) => {
     const a = angle(i);
-    const gap = 80;
+    const gap = 100;
     d.x0 = cx + Math.cos(a) * r0;
     d.y0 = cy + Math.sin(a) * r0;
     d.y = d.y0;
-    d.endAngle = Math.random() * 160 - 80;
-    d.endW = Math.random() * 50 + 30;
+    // d.endAngle = Math.random() * 90 - 45;
+    d.endAngle = 0;
+    d.endW = Math.random() * 50 + 50;
     if (i % 2 == 0) {
       d.x1 = window.innerWidth * 0.15;
       d.y1 = lefty;
@@ -182,17 +186,16 @@ onMounted(async () => {
     .style("object-fit", "contain")
     .style("position", "absolute")
     .style("border", ".4px solid black")
-    .style("transform", "translate(-50%, -50%) rotate(0deg) ")
+    .style("transform-origin", "center")
+    .style("transform", "rotate(0deg) ")
     .style("transition", "transform .2s ease-in-out")
     .on("mouseover", function (event, d) {
-      d3.select(this)
-        .style("border", "1px solid black")
-        .style("transform", "translate(-50%, -50%) rotate(0deg)");
+      d3.select(this).style("transform", " rotate(0deg) scale(2)");
     })
     .on("mouseleave", function (event, d) {
       d3.select(this)
         .style("border", ".4px solid black")
-        .style("transform", `translate(-50%, -50%) rotate(${d.endAngle}deg)`);
+        .style("transform", `rotate(${d.endAngle}deg)`);
     })
     .on("click", (d) => {
       window.open(d.link, "_blank");
@@ -202,20 +205,15 @@ onMounted(async () => {
     .on("mouseover", function (d) {
       const name = d3.select(this).attr("class");
       d3.selectAll(`.img-node.${name}`)
-        .style("transition", "transform .2s ease-in-out, width .4s ease-in-out")
-        .style("border", "1px solid black")
-        .style("width", 120 + "px")
-        .style("transform", "translate(-50%, -50%) rotate(0deg)");
+        .style("transition", "transform .2s ease-in-out")
+        .style("transform", "rotate(0deg) scale(2)");
     })
     .on("mouseleave", function (d) {
       const name = d3.select(this).attr("class");
       d3.selectAll(`.img-node.${name}`)
         .style("border", ".1px solid black")
         .style("width", (d) => d.endW + "px")
-        .style(
-          "transform",
-          (d) => `translate(-50%, -50%) rotate(${d.endAngle}deg)`
-        );
+        .style("transform", (d) => `rotate(${d.endAngle}deg)`);
     })
     .on("click", function (d) {
       const name = d3.select(this).attr("class");
@@ -305,12 +303,13 @@ h4 {
   height: calc(100vh - 80px);
   overflow-y: auto;
   padding-bottom: 100vh;
-  padding-top: 100px;
+  /* padding-top: 50px; */
+
+  /* background: linear-gradient(to bottom, #ffc0cb, #add8e6); */
 }
 .progress-step {
   height: 5px;
-  /* border: 0.01px solid black; */
-  /* background: linear-gradient(to bottom, #ffc0cb, #add8e6); */
+  /* border: 0.1px solid black; */
 }
 .name {
   pointer-events: none;

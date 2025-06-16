@@ -16,7 +16,7 @@
 </template>
 <style scoped>
 .grid {
-  padding: 80px;
+  padding: 0px 80px;
   display: grid;
   gap: 0;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
