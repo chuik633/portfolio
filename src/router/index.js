@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomePage from "../pages/HomePage.vue";
 import AboutPage from "../pages/AboutPage.vue";
 import DataVizPage from "../pages/DataVizPage.vue";
 import CodeSketchesPage from "../pages/CodeSketchesPage.vue";
@@ -8,7 +7,6 @@ import CodePopup from "../components/CodePopup.vue";
 import { p5Data } from "../data/p5Data.js";
 
 const routes = [
-  { path: "/", name: "Home", component: HomePage },
   { path: "/about", name: "About", component: AboutPage },
   { path: "/data-viz", name: "DataViz", component: DataVizPage },
   {

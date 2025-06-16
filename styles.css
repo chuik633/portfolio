@@ -23,15 +23,14 @@ body {
 }
 #app {
   background-color: var(--default-back);
-  /* background-color: pink; */
-  /* padding: 20px; */
+
   display: flex;
   flex-direction: column;
   gap: 50px;
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
-  top: 80px;
+  top: 40px;
   padding-top: 50px;
 }
 

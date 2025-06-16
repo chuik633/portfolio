@@ -68,7 +68,7 @@ const yShift = ref(40);
 const fontScale = d3.scaleLinear().domain([0, numSteps]).range([80, 24]);
 const startW = 20;
 let animationtimer = null;
-const topBoundary = 50;
+const topBoundary = 30;
 const bottomBoundary = window.innerHeight - 80;
 function onStepEnter({ index }) {
   if (index >= numSteps * 0.9) {
@@ -96,7 +96,7 @@ function onStepEnter({ index }) {
     });
     return;
   } else {
-    if (animationtimer) {
+    if (animationtimer != null) {
       animationtimer.stop();
       animationtimer = null;
     }

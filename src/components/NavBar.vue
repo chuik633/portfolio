@@ -14,7 +14,7 @@
 <style scoped>
 .nav-bar {
   width: 100%;
-  height: 80px;
+  height: 40px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -33,9 +33,9 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding-bottom: 30px;
+  padding-bottom: 8px;
   width: 25%;
-  height: 80px;
+  height: 100%;
   color: black;
   font-weight: 100;
   line-height: 200%;
@@ -46,8 +46,10 @@
 .router-link-exact-active {
   font-weight: 700;
   /* font-size: 12px; */
-  width: 100%;
+  width: 50%;
   background-color: var(--current-back);
+  background-color: black;
+  color: var(--current-back);
   border-left: 0.5px solid black;
   border-right: 0.5px solid black;
 }
