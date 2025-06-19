@@ -5,10 +5,33 @@ import CodeSketchesPage from "../pages/CodeSketchesPage.vue";
 import PhysicalArtPage from "../pages/PhysicalArtPage.vue";
 import CodePopup from "../components/CodePopup.vue";
 import { p5Data } from "../data/p5Data.js";
+import { dvData } from "../data/dvData.js";
+import DVPopup from "../components/DVPopup.vue";
 
 const routes = [
   { path: "/about", name: "About", component: AboutPage },
-  { path: "/data-viz", name: "DataViz", component: DataVizPage },
+  {
+    path: "/data-viz",
+    name: "DataViz",
+    component: DataVizPage,
+    children: [
+      {
+        path: ":title",
+        name: "DVPopup",
+        component: DVPopup,
+        props: (route) => {
+          const props = route.params;
+          const title = decodeURIComponent(props.title);
+          const project = dvData.find((s) => s.projectTitle === title);
+          return project
+            ? {
+                ...project,
+              }
+            : {};
+        },
+      },
+    ],
+  },
   {
     path: "/code-sketches",
     name: "CodeSketches",
@@ -26,7 +49,6 @@ const routes = [
             ? {
                 projectTitle: sketch.projectTitle,
                 projectLink: sketch.projectLink,
-                codeLink: sketch.codeLink,
                 date: sketch.date,
                 mainColor: sketch.mainColor,
               }

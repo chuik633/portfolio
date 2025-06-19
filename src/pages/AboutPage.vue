@@ -19,12 +19,27 @@
     </h1>
 
     <div class="about-scroll">
-      <p>
-        Welcome to my digital sketchbook/archive! I’m fascinated by using data,
-        code, and math to create art and tell multi-sensory stories. This
-        sketchbook ranges from p5 experiments and mini games to my full stack
-        data viz projects.
-      </p>
+      <div
+        class="row"
+        style="
+          gap: 20px;
+          align-items: center;
+          height: 100%;
+          padding-bottom: 50px;
+        "
+      >
+        <img
+          src="/assets/about/profile.JPG"
+          style="width: 30%; object-fit: cover; max-width: 200px"
+        />
+        <p style="text-align: left; width: 60%">
+          Welcome to my digital sketchbook/archive! I’m fascinated by using
+          data, code, and math to create art and tell multi-sensory stories.
+          This sketchbook ranges from p5 experiments and mini games to my full
+          stack data viz projects.
+        </p>
+      </div>
+
       <h4>FAVORITE PROJECTS</h4>
       <ul>
         <li class="soundstories">
@@ -71,6 +86,8 @@ let animationtimer = null;
 const topBoundary = 0;
 const speed = 0.1;
 const bottomBoundary = window.innerHeight - 80;
+let lefty = 80;
+let righty = 80;
 function onStepEnter({ index }) {
   if (index >= numSteps - 2) {
     console.log(index);
@@ -87,11 +104,11 @@ function onStepEnter({ index }) {
           if (i % 2 == 0) {
             dy = -speed;
             if (d.y < topBoundary) {
-              d.y = bottomBoundary;
+              d.y = lefty;
             }
           } else {
             dy = speed;
-            if (d.y > bottomBoundary) {
+            if (d.y > righty) {
               d.y = topBoundary;
             }
           }
@@ -148,8 +165,7 @@ onMounted(async () => {
     .scaleLinear()
     .domain([0, favorites.length])
     .range([0, 2 * Math.PI]);
-  let lefty = 80;
-  let righty = 80;
+
   favorites.forEach((d, i) => {
     const a = angle(i);
     const gap = 100;

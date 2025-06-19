@@ -1,10 +1,22 @@
 export const favorites = [
   { name: "sentimentplot", link: "", ext: "gif" },
-  { name: "greyday", link: "", ext: "gif" },
+  {
+    name: "greyday",
+    link: "https://chuik633.github.io/code-sketches/Grey%2520Day",
+    ext: "gif",
+  },
   { name: "colorfashion", link: "", ext: "gif" },
-  { name: "wigglyfont", link: "", ext: "gif" },
+  {
+    name: "wigglyfont",
+    link: "https://chuik633.github.io/code-sketches/Wiggly%2520Font",
+    ext: "gif",
+  },
   { name: "soundstories", link: "", ext: "gif" },
-  { name: "tables", link: "", ext: "gif" },
+  {
+    name: "tables",
+    link: "https://chuik633.github.io/code-sketches/Table%2520of%2520Tables",
+    ext: "gif",
+  },
   { name: "sootsprites", link: "", ext: "gif" },
   { name: "puzzle", link: "", ext: "png" },
   { name: "artcode", link: "", ext: "gif" },

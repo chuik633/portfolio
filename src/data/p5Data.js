@@ -5,7 +5,7 @@ export const p5Data = [
     date: "2024",
     description: "click on the :/ face to play a song",
     mainColor: "#F4F4F4",
-    imageFolder: "./assets/sketch_images/Grey Day/",
+    imageFolder: "/assets/sketch_images/Grey Day/",
     images: ["grey day.gif"],
   },
   {
@@ -14,7 +14,7 @@ export const p5Data = [
     date: "2024",
     description: "click to create points. press return to close the shape.",
     mainColor: "#F1ECE5",
-    imageFolder: "./assets/sketch_images/Wiggly Shapes/",
+    imageFolder: "/assets/sketch_images/Wiggly Shapes/",
     images: ["shapes.gif"],
   },
   {
@@ -24,7 +24,7 @@ export const p5Data = [
     description:
       "type something! I built off of my wiggly shapes code for this.",
     mainColor: "#FFFFFF",
-    imageFolder: "./assets/sketch_images/Wiggly Font/",
+    imageFolder: "/assets/sketch_images/Wiggly Font/",
     images: ["wigglyfont.gif"],
   },
   {
@@ -33,7 +33,7 @@ export const p5Data = [
     date: "2024",
     description: "Turn on your volume and click on objects.",
     mainColor: "#CB421D",
-    imageFolder: "./assets/sketch_images/Kitchen Sounds/",
+    imageFolder: "/assets/sketch_images/Kitchen Sounds/",
     images: ["kitchen.gif"],
   },
   {
@@ -42,7 +42,7 @@ export const p5Data = [
     date: "2024",
     description: "a randomly generated table of tables",
     mainColor: "#E6E1DE",
-    imageFolder: "./assets/sketch_images/Table of Tables/",
+    imageFolder: "/assets/sketch_images/Table of Tables/",
     images: ["table of tables.gif"],
   },
   {
@@ -51,7 +51,7 @@ export const p5Data = [
     date: "2024",
     description: undefined,
     mainColor: "#B3AAA3",
-    imageFolder: "./assets/sketch_images/Glove Guy/",
+    imageFolder: "/assets/sketch_images/Glove Guy/",
     images: ["glove guy.gif"],
   },
   {
@@ -60,7 +60,7 @@ export const p5Data = [
     date: "2024",
     description: undefined,
     mainColor: "#F1ECE5",
-    imageFolder: "./assets/sketch_images/Parameters/",
+    imageFolder: "/assets/sketch_images/Parameters/",
     images: ["joystick.gif", "wave.gif"],
   },
   {
@@ -69,7 +69,7 @@ export const p5Data = [
     date: "2024",
     description: undefined,
     mainColor: "#242322",
-    imageFolder: "./assets/sketch_images/Cool Mouses/",
+    imageFolder: "/assets/sketch_images/Cool Mouses/",
     images: ["sootsprites.gif", "svgmouse.gif"],
   },
   {
@@ -78,7 +78,7 @@ export const p5Data = [
     date: "2024",
     description: undefined,
     mainColor: "#EBE2D5",
-    imageFolder: "./assets/sketch_images/Ani Albers Study/",
+    imageFolder: "/assets/sketch_images/Ani Albers Study/",
     images: ["1.png", "2.png", "3.png"],
   },
   {
@@ -87,7 +87,7 @@ export const p5Data = [
     date: "2024",
     description: undefined,
     mainColor: "#EBE2D5",
-    imageFolder: "./assets/sketch_images/Sound/",
+    imageFolder: "/assets/sketch_images/Sound/",
     images: ["piano.gif", "abstract.gif"],
   },
 ];

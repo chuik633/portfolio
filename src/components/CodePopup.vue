@@ -20,6 +20,7 @@
           :src="codeLink"
           frameborder="0"
           scrolling="no"
+          @load="resizeIframe"
         ></iframe>
       </div>
     </div>
@@ -44,6 +45,9 @@
   padding: 50px;
   gap: 10px;
 }
+.code-container {
+  width: 50%;
+}
 .project-title {
   font-size: 25px;
   font-weight: 700;
@@ -56,7 +60,7 @@
 .iframe-container {
   border: 1px solid black;
   max-height: 60vh;
-  height: fit-content;
+  width: 50%;
   height: 100%;
   flex-shrink: 1;
 }
@@ -143,39 +147,32 @@ onMounted(async () => {
 function openProject() {
   window.open(props.projectLink, "_blank");
 }
-function resizeIframe(iframe) {
-  iframe.addEventListener("load", () => {
-    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-    const iframeBody = iframeDoc.body;
+function resizeIframe(event) {
+  const iframe = event.target;
+  const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
 
-    const container = iframe.parentElement;
-    const containerWidth = container.clientWidth;
-    const containerHeight = container.clientHeight;
+  if (!iframeDoc || !iframeDoc.body) return;
 
-    const contentWidth = iframeBody.scrollWidth;
-    let contentHeight = iframeBody.scrollHeight;
-    if (contentHeight === 0) {
-      contentHeight = containerHeight;
-    }
+  const container = iframe.parentElement;
+  const containerWidth = container.clientWidth;
+  const containerHeight = container.clientHeight;
 
-    const scaleWidth = containerWidth / contentWidth;
-    const scaleHeight = containerHeight / contentHeight;
-    const scale = Math.min(scaleWidth, scaleHeight, 1);
+  const contentWidth = iframeDoc.body.scrollWidth;
+  let contentHeight = iframeDoc.body.scrollHeight;
 
-    if (scale !== 1) {
-      iframe.style.transform = `scale(${scale})`;
-      iframe.style.transformOrigin = "top left";
+  if (contentHeight === 0) contentHeight = containerHeight;
 
-      iframe.style.width = `${contentWidth}px`;
-      iframe.style.height = `${contentHeight}px`;
+  const scaleWidth = containerWidth / contentWidth;
+  const scaleHeight = containerHeight / contentHeight;
+  const scale = Math.min(scaleWidth, scaleHeight, 1);
 
-      const topOffset = (containerHeight - contentHeight * scale) / 2;
-      iframe.style.position = "relative";
-      iframe.style.top = `${topOffset}px`;
-    }
+  iframe.style.transform = `scale(${scale})`;
+  iframe.style.transformOrigin = "top left";
+  iframe.style.width = `${contentWidth}px`;
+  iframe.style.height = `${contentHeight}px`;
+  iframe.style.position = "relative";
 
-    container.style.width = `${contentWidth * scale}px`;
-    container.style.height = `${contentHeight * scale}px`;
-  });
+  const topOffset = (containerHeight - contentHeight * scale) / 2;
+  iframe.style.top = `${topOffset}px`;
 }
 </script>
