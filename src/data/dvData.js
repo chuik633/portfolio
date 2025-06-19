@@ -27,7 +27,7 @@ export const dvData = [
       "figma.png",
     ],
     mainColor: "#F7F7F0",
-    imageFolder: "/assets/projects/Sound Stories/",
+    imageFolder: "/portfolio/assets/projects/Sound Stories/",
     basic: false,
   },
   {

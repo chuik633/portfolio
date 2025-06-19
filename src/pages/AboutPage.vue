@@ -193,7 +193,7 @@ onMounted(async () => {
     .enter()
     .append("img")
     .attr("class", (d) => "img-node " + d.name)
-    .attr("src", (d) => `./assets/about/favorites/${d.name}.${d.ext}`)
+    .attr("src", (d) => `/assets/about/favorites/${d.name}.${d.ext}`)
     .attr("alt", (d) => d.name)
     .style("top", (d, i) => `${d.y0}px`)
     .style("left", (d, i) => `${d.x0}px`)

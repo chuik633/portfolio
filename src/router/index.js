@@ -61,6 +61,6 @@ const routes = [
 ];
 
 export default createRouter({
-  history: createWebHistory(),
+  history: createWebHistory("/portfolio/"),
   routes,
 });
