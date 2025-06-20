@@ -1,4 +1,8 @@
-import { createRouter, createWebHistory } from "vue-router";
+import {
+  createRouter,
+  createWebHistory,
+  createWebHashHistory,
+} from "vue-router";
 import AboutPage from "../pages/AboutPage.vue";
 import DataVizPage from "../pages/DataVizPage.vue";
 import CodeSketchesPage from "../pages/CodeSketchesPage.vue";
@@ -61,6 +65,6 @@ const routes = [
 ];
 
 export default createRouter({
-  history: createWebHistory("/portfolio/"),
+  history: createWebHashHistory(),
   routes,
 });
