@@ -41,7 +41,7 @@ const props = defineProps({
   images: { type: Array, default: () => [] },
   imageFolder: {
     type: String,
-    default: `/assets/sketch_images/`,
+    default: `${import.meta.env.BASE_URL}assets/sketch_images/`,
   },
 });
 

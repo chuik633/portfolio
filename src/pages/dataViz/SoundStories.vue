@@ -5,7 +5,7 @@
         class="media-element"
         controls
         autoplay="true"
-        src="/assets/projects/Sound Stories/final_compressed.mp4"
+        :src="videoSrc"
       ></video>
       <ImageList
         class="media-element"
@@ -77,7 +77,7 @@ import { dvDataTitle } from "../../data/dvData";
 const { images, processImages, codeLink, mainColor, imageFolder } =
   dvDataTitle["Sound Stories"];
 import { ref, onMounted } from "vue";
-
+const videoSrc = `${base}assets/projects/Sound Stories/final_compressed.mp4`;
 const imageListLevel = ref(1);
 function getImageListLevel() {
   if (window.innerWidth > 1200) {

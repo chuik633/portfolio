@@ -29,7 +29,7 @@
         "
       >
         <img
-          src="/assets/about/profile.JPG"
+          :src="profilSrc"
           style="width: 30%; object-fit: cover; max-width: 200px"
         />
         <p style="text-align: left; width: 60%">
@@ -76,7 +76,7 @@ import "intersection-observer";
 import VueScrollama from "vue3-scrollama";
 import * as d3 from "d3";
 import { favorites } from "../data/favorites.js";
-
+const profilSrc = `${import.meta.env.BASE_URL}assets/about/profile.JPG`;
 const numSteps = 300;
 const fontSize = ref(100);
 const yShift = ref(30);
@@ -193,7 +193,11 @@ onMounted(async () => {
     .enter()
     .append("img")
     .attr("class", (d) => "img-node " + d.name)
-    .attr("src", (d) => `/assets/about/favorites/${d.name}.${d.ext}`)
+    .attr(
+      "src",
+      (d) =>
+        `${import.meta.env.BASE_URL}assets/about/favorites/${d.name}.${d.ext}`
+    )
     .attr("alt", (d) => d.name)
     .style("top", (d, i) => `${d.y0}px`)
     .style("left", (d, i) => `${d.x0}px`)

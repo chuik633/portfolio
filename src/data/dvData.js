@@ -1,3 +1,4 @@
+const start = `${import.meta.env.BASE_URL}`;
 export const dvData = [
   {
     projectTitle: "Sound Stories",
@@ -27,7 +28,7 @@ export const dvData = [
       "figma.png",
     ],
     mainColor: "#F7F7F0",
-    imageFolder: "/assets/projects/Sound Stories/",
+    imageFolder: start + "assets/projects/Sound Stories/",
     basic: false,
   },
   {
@@ -44,7 +45,7 @@ export const dvData = [
     images: ["1.gif", "2.gif"],
     processImages: ["5.png", "1.png", "3.png", "2.png", "4.png"],
     mainColor: "#F7F7F0",
-    imageFolder: "/assets/projects/Puzzle Race/",
+    imageFolder: start + "assets/projects/Puzzle Race/",
     basic: true,
   },
   {
@@ -57,7 +58,7 @@ export const dvData = [
     codeLink: "https://github.com/chuik633/ColorSearch",
     images: ["expand-cards.gif", "move-clusters.gif", "zoom.gif"],
     mainColor: "#E9E8E4",
-    imageFolder: "/assets/projects/ColorSearch/",
+    imageFolder: start + "assets/projects/ColorSearch/",
     basic: true,
   },
   {
@@ -75,7 +76,7 @@ export const dvData = [
       "proteinplot.gif",
     ],
     mainColor: "#F7F7F0",
-    imageFolder: "/assets/projects/Yelp Reviews/",
+    imageFolder: start + "assets/projects/Yelp Reviews/",
     basic: true,
   },
 
@@ -95,7 +96,7 @@ export const dvData = [
       "scroll_1.gif",
     ],
     mainColor: "#E9E8E4",
-    imageFolder: "/assets/projects/Hats of the Smithsonian/",
+    imageFolder: start + "assets/projects/Hats of the Smithsonian/",
     basic: true,
   },
   {
@@ -108,7 +109,7 @@ export const dvData = [
     codeLink: "https://github.com/chuik633/major-studio1-code-chuik633",
     images: ["scroll.gif", "popup.gif", "snaptogrid.gif"],
     mainColor: "#07253C",
-    imageFolder: "/assets/projects/Fish Lengths/",
+    imageFolder: start + "assets/projects/Fish Lengths/",
     basic: true,
   },
 ];

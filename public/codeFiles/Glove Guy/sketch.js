@@ -59,12 +59,18 @@ function preload() {
   for (const [feature_name, count] of Object.entries(num_images)) {
     let loadedImages = [];
     for (var i = 1; i <= count; i++) {
-      loadedImages.push(loadImage(`/assets/images/${feature_name}/${i}.png`));
+      loadedImages.push(
+        loadImage(
+          `${import.meta.env.BASE_URL}assets/images/${feature_name}/${i}.png`
+        )
+      );
     }
     face_data[feature_name] = loadedImages;
   }
 
-  paperTextureImg = loadImage("/assets/images/textture.jpg");
+  paperTextureImg = loadImage(
+    `${import.meta.env.BASE_URL}assets/images/textture.jpg`
+  );
 }
 
 function setup() {
