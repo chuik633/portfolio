@@ -1,20 +1,25 @@
+const base = "https://chuik633.github.io/portfolio/#";
 export const favorites = [
   { name: "sentimentplot", link: "", ext: "gif" },
   {
     name: "greyday",
-    link: "https://chuik633.github.io/code-sketches/Grey%2520Day",
+    link: base + "code-sketches/Grey%2520Day",
     ext: "gif",
   },
   { name: "colorfashion", link: "", ext: "gif" },
   {
     name: "wigglyfont",
-    link: "https://chuik633.github.io/code-sketches/Wiggly%2520Font",
+    link: base + "code-sketches/Wiggly%2520Font",
     ext: "gif",
   },
-  { name: "soundstories", link: "", ext: "gif" },
+  {
+    name: "soundstories",
+    link: base + "data-viz/Sound%2520Stories",
+    ext: "gif",
+  },
   {
     name: "tables",
-    link: "https://chuik633.github.io/code-sketches/Table%2520of%2520Tables",
+    link: base + "code-sketches/Table%2520of%2520Tables",
     ext: "gif",
   },
   { name: "sootsprites", link: "", ext: "gif" },
@@ -25,5 +30,9 @@ export const favorites = [
   { name: "papercity full", link: "", ext: "jpg" },
   { name: "papercity room", link: "", ext: "jpg" },
   { name: "moia e", link: "", ext: "gif" },
-  { name: "soundstories processing", link: "", ext: "gif" },
+  {
+    name: "soundstories processing",
+    link: base + "data-viz/Sound%2520Stories",
+    ext: "gif",
+  },
 ];

@@ -13,7 +13,7 @@ import { dvData } from "../data/dvData.js";
 import DVPopup from "../components/DVPopup.vue";
 
 const routes = [
-  { path: "/about", name: "About", component: AboutPage },
+  { path: "/", name: "About", component: AboutPage },
   {
     path: "/data-viz",
     name: "DataViz",
@@ -53,6 +53,7 @@ const routes = [
             ? {
                 projectTitle: sketch.projectTitle,
                 projectLink: sketch.projectLink,
+                description: sketch.description,
                 date: sketch.date,
                 mainColor: sketch.mainColor,
               }

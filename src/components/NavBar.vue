@@ -1,6 +1,6 @@
 <template>
   <nav class="nav-bar">
-    <router-link to="/about" class="nav-link">About</router-link>
+    <router-link to="/" class="nav-link">About</router-link>
     <router-link to="/data-viz" class="nav-link">Data Viz</router-link>
     <router-link to="/code-sketches" class="nav-link"
       >Code Sketches</router-link

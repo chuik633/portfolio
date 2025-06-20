@@ -66,17 +66,19 @@
     Since I wanted the colors/vibe of each page to match each film, I experiment
     with different methods for extracting colors from each scene.
   </p>
-  <ImageList
+  <ImageCarousel
     :images="['colors.png', 'colors2.png', 'figma.png']"
     :imageFolder="imageFolder"
-  ></ImageList>
+  ></ImageCarousel>
 </template>
 <script setup>
 import ImageList from "../../components/imageLayouts/ImageList.vue";
+import ImageCarousel from "../../components/imageLayouts/ImageCarousel.vue";
 import { dvDataTitle } from "../../data/dvData";
 const { images, processImages, codeLink, mainColor, imageFolder } =
   dvDataTitle["Sound Stories"];
 import { ref, onMounted } from "vue";
+const base = import.meta.env.BASE_URL;
 const videoSrc = `${base}assets/projects/Sound Stories/final_compressed.mp4`;
 const imageListLevel = ref(1);
 function getImageListLevel() {
@@ -115,7 +117,7 @@ video {
   overflow-x: visible;
 }
 img {
-  min-height: 100px;
+  min-height: 140px;
   width: 100%;
   height: auto;
   object-fit: contain;
