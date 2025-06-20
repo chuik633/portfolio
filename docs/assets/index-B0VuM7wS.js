@@ -23,7 +23,7 @@
                In this project, I used p5 to created audio reactive typography for the captions of films. In the backend, I built my own processing pipeline to download youtube videos, extract image data, audio data, and captions. 
                I used tools like FFTs to deconstruct the audio files and clustering on the colors of the film to get thematic color palettes. Read more on the page!
                For the backend, I used Docker, fly.io, and supabase to store the uploaded youtube data.
-               `,codeLink:"https://github.com/chuik633/SoundStories",images:["walkthru2.gif","font-prevs.gif","how.gif","process.gif","walkthru.gif"],processImages:["wiggly_font.png","blur_font.png","strings_font.png","colors.png","colors2.png","layouts.png","figma.png"],mainColor:"#F7F7F0",imageFolder:"/portfolio/assets/projects/Sound Stories/",basic:!1},{projectTitle:"Puzzle Race",projectLink:"https://chuik633.github.io/Puzzle/",date:"December 2024",description:`
+               `,codeLink:"https://github.com/chuik633/SoundStories",images:["walkthru2.gif","font-prevs.gif","how.gif","process.gif","walkthru.gif"],processImages:["wiggly_font.png","blur_font.png","strings_font.png","colors.png","colors2.png","layouts.png","figma.png"],mainColor:"#F7F7F0",imageFolder:"/assets/projects/Sound Stories/",basic:!1},{projectTitle:"Puzzle Race",projectLink:"https://chuik633.github.io/Puzzle/",date:"December 2024",description:`
                 New Yorker Mini Puzzle Advent Calendar! 
                 We did a 100 piece puzzle every day of December and tracked our times. 
                 I played around with visualizing average times of puzzles and made it a fun race between my family :P

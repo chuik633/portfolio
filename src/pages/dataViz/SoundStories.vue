@@ -5,7 +5,7 @@
         class="media-element"
         controls
         autoplay="true"
-        src="./assets/projects/Sound Stories/final_compressed.mp4"
+        src="/assets/projects/Sound Stories/final_compressed.mp4"
       ></video>
       <ImageList
         class="media-element"

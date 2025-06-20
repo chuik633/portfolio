@@ -29,7 +29,7 @@
         "
       >
         <img
-          src="./assets/about/profile.JPG"
+          src="/assets/about/profile.JPG"
           style="width: 30%; object-fit: cover; max-width: 200px"
         />
         <p style="text-align: left; width: 60%">
@@ -193,7 +193,7 @@ onMounted(async () => {
     .enter()
     .append("img")
     .attr("class", (d) => "img-node " + d.name)
-    .attr("src", (d) => `./assets/about/favorites/${d.name}.${d.ext}`)
+    .attr("src", (d) => `/assets/about/favorites/${d.name}.${d.ext}`)
     .attr("alt", (d) => d.name)
     .style("top", (d, i) => `${d.y0}px`)
     .style("left", (d, i) => `${d.x0}px`)
