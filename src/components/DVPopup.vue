@@ -36,6 +36,7 @@ import { useRouter } from "vue-router";
 import ImageList from "./imageLayouts/ImageList.vue";
 import ImageCarousel from "./imageLayouts/ImageCarousel.vue";
 import * as d3 from "d3";
+import { isColorDark, isVideo } from "./helpers";
 const router = useRouter();
 
 const props = defineProps({
@@ -61,17 +62,6 @@ onMounted(() => {
   }
 });
 
-console.log(props.images);
-function isColorDark(hex) {
-  hex = hex.replace("#", "");
-  const r = parseInt(hex.substring(0, 2), 16);
-  const g = parseInt(hex.substring(2, 4), 16);
-  const b = parseInt(hex.substring(4, 6), 16);
-
-  const luminance = 0.299 * r + 0.587 * g + 0.114 * b;
-
-  return luminance < 128;
-}
 function close() {
   router.push({ name: "DataViz" });
 }
@@ -113,8 +103,9 @@ const pages = {
 .close-btn {
   font-family: Futura;
   font-weight: 100;
-  top: -50px;
-  right: -50px;
+  position: fixed;
+  top: 0px;
+  right: 0px;
   width: 20px;
   font-size: 15px;
   height: 20px;

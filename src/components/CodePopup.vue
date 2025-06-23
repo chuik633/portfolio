@@ -152,6 +152,7 @@ iframe {
 <script setup>
 import { ref, onMounted, computed } from "vue";
 import { useRouter } from "vue-router";
+import { isColorDark, isVideo } from "./helpers";
 const router = useRouter();
 const props = defineProps({
   projectTitle: { type: String, required: true },
@@ -170,6 +171,7 @@ function close() {
 }
 
 const codeText = ref("Loading code...");
+
 const isDark = computed(() => isColorDark(props.mainColor));
 const textClr = computed(() => (isDark.value ? "white" : "black"));
 
@@ -184,16 +186,7 @@ onMounted(async () => {
     console.error(e);
   }
 });
-function isColorDark(hex) {
-  hex = hex.replace("#", "");
-  const r = parseInt(hex.substring(0, 2), 16);
-  const g = parseInt(hex.substring(2, 4), 16);
-  const b = parseInt(hex.substring(4, 6), 16);
 
-  const luminance = 0.299 * r + 0.587 * g + 0.114 * b;
-
-  return luminance < 128;
-}
 function openProject() {
   window.open(props.projectLink, "_blank");
 }

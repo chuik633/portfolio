@@ -32,7 +32,8 @@ export const p5Data = [
     projectTitle: "Kitchen Sounds",
     projectLink: undefined,
     date: "2024",
-    description: "Turn on your volume and click on objects.",
+    description:
+      "Turn on your volume and click on objects to enjoy this mini illustration sound scape! I love playing with texture and combining mediums to make code feel more physical.",
     mainColor: "#CB421D",
     imageFolder: start + "assets/sketch_images/Kitchen Sounds/",
     images: ["kitchen.gif"],

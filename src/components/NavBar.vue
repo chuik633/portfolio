@@ -2,6 +2,7 @@
   <nav class="nav-bar">
     <router-link to="/" class="nav-link">About</router-link>
     <router-link to="/data-viz" class="nav-link">Data Viz</router-link>
+    <router-link to="/design-projects" class="nav-link">Design</router-link>
     <router-link to="/code-sketches" class="nav-link"
       >Code Sketches</router-link
     >

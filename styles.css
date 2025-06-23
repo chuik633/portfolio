@@ -1,3 +1,4 @@
+@import "normalize.css";
 * {
   box-sizing: border-box;
   margin: 0px;
@@ -10,6 +11,33 @@
   position: relative;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+img,
+picture,
+video,
+canvas,
+svg,
+iframe {
+  display: block; /* remove inline‐element whitespace quirks */
+  max-width: 100%; /* never overflow its container */
+  height: auto; /* preserve aspect ratio */
+}
+
+[style*="display:flex"],
+.flex-container,
+.d-flex {
+  align-items: flex-start; /* don’t auto‐stretch vertically */
+}
+
+[style*="display:flex"] > * {
+  min-height: 0; /* prevent Safari’s min‐content flex quirk */
 }
 
 :root {

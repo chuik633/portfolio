@@ -30,10 +30,11 @@ function openExternalSite() {
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  padding: 50px 80px;
 }
 .masonry-grid {
   column-count: 3;
-  column-gap: 8px;
+  column-gap: 10px;
 }
 
 @media (max-width: 900px) {
