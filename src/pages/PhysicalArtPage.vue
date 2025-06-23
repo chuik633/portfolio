@@ -18,7 +18,7 @@
 <script setup>
 import { artData } from "../data/artData.js";
 
-const basePath = import.meta.env.BASE_URL + "assets/physicalArt/";
+const basePath = import.meta.env.VITE_CDN_BASE + "assets/physicalArt/";
 function openExternalSite() {
   window.open("https://kchuiart.com", "_blank");
 }
