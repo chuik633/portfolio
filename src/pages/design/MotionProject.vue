@@ -99,7 +99,7 @@ video {
 }
 .container1 video {
   max-height: 70vh;
-  width: fit-content;
+  width: fit-content !important;
   max-width: 100%;
 }
 .thumbnails {

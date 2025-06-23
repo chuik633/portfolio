@@ -47,10 +47,11 @@ function close() {
 
 // -------------- pages--------------
 import MotionProject from "../pages/design/MotionProject.vue";
-import Noguchi from "../pages/design/Noguchi.vue";
+import ArtCode from "../pages/design/ArtCode.vue";
 const pages = {
   Noguchi: MotionProject,
   "Renegade Craft": MotionProject,
+  "Art + Code": ArtCode,
 };
 const currentPage = computed(() => {
   console.log(props.projectTitle);
