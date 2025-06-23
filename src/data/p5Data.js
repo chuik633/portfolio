@@ -7,7 +7,7 @@ export const p5Data = [
     description: "click on the :/ face to play a song",
     mainColor: "#F4F4F4",
     imageFolder: start + "assets/sketch_images/Grey Day/",
-    images: ["grey day.gif"],
+    images: ["grey day.webp"],
   },
   {
     projectTitle: "Wiggly Shapes",
@@ -16,7 +16,7 @@ export const p5Data = [
     description: "click to create points. press return to close the shape.",
     mainColor: "#F1ECE5",
     imageFolder: start + "assets/sketch_images/Wiggly Shapes/",
-    images: ["shapes.gif"],
+    images: ["shapes.webp"],
   },
   {
     projectTitle: "Wiggly Font",
@@ -26,7 +26,7 @@ export const p5Data = [
       "type something! I built off of my wiggly shapes code for this.",
     mainColor: "#FFFFFF",
     imageFolder: start + "assets/sketch_images/Wiggly Font/",
-    images: ["wigglyfont.gif"],
+    images: ["wigglyfont.webp"],
   },
   {
     projectTitle: "Kitchen Sounds",
@@ -36,7 +36,7 @@ export const p5Data = [
       "Turn on your volume and click on objects to enjoy this mini illustration sound scape! I love playing with texture and combining mediums to make code feel more physical.",
     mainColor: "#CB421D",
     imageFolder: start + "assets/sketch_images/Kitchen Sounds/",
-    images: ["kitchen.gif"],
+    images: ["kitchen.webp"],
   },
   {
     projectTitle: "Table of Tables",
@@ -45,7 +45,7 @@ export const p5Data = [
     description: "a randomly generated table of tables",
     mainColor: "#E6E1DE",
     imageFolder: start + "assets/sketch_images/Table of Tables/",
-    images: ["table of tables.gif"],
+    images: ["table of tables.webp"],
   },
   {
     projectTitle: "Glove Guy",
@@ -54,7 +54,7 @@ export const p5Data = [
     description: "combining hand drawn art with code!",
     mainColor: "#B3AAA3",
     imageFolder: start + "assets/sketch_images/Glove Guy/",
-    images: ["glove guy.gif"],
+    images: ["glove guy.webp"],
   },
   {
     projectTitle: "Parameters",
@@ -63,7 +63,7 @@ export const p5Data = [
     description: "how do we take user input?",
     mainColor: "#F1ECE5",
     imageFolder: start + "assets/sketch_images/Parameters/",
-    images: ["joystick.gif", "wave.gif"],
+    images: ["joystick.webp", "wave.webp"],
   },
   {
     projectTitle: "Cool Mouses",
@@ -72,7 +72,7 @@ export const p5Data = [
     description: "move the mosue around",
     mainColor: "#242322",
     imageFolder: start + "assets/sketch_images/Cool Mouses/",
-    images: ["sootsprites.gif", "svgmouse.gif"],
+    images: ["sootsprites.webp", "svgmouse.webp"],
   },
   {
     projectTitle: "Ani Albers Study",
@@ -81,7 +81,7 @@ export const p5Data = [
     description: "experimenting with randomness and p5.brush",
     mainColor: "#EBE2D5",
     imageFolder: start + "assets/sketch_images/Ani Albers Study/",
-    images: ["1.png", "2.png", "3.png"],
+    images: ["1.webp", "2.webp", "3.webp"],
   },
   {
     projectTitle: "Sound",
@@ -90,6 +90,6 @@ export const p5Data = [
     description: undefined,
     mainColor: "#EBE2D5",
     imageFolder: start + "assets/sketch_images/Sound/",
-    images: ["piano.gif", "abstract.gif"],
+    images: ["piano.webp", "abstract.webp"],
   },
 ];
