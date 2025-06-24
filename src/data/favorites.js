@@ -1,4 +1,4 @@
-const base = `${import.meta.env.VITE_CDN_BASE}`;
+const base = `${import.meta.env.BASE_URL}`;
 export const favorites = [
   { name: "sentimentplot", link: "", ext: "webp" },
   {
