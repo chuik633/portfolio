@@ -15,7 +15,7 @@ export const favorites = [
   {
     name: "soundstories",
     link: base + "data-viz/Sound%2520Stories",
-    ext: "webp",
+    ext: "png",
   },
   {
     name: "tables",
@@ -28,12 +28,36 @@ export const favorites = [
     ext: "webp",
   },
   { name: "puzzle", link: base + "data-viz/Sound%2520Stories", ext: "webp" },
-  { name: "artcode", link: "", ext: "webp" },
-  { name: "noguchi", link: "", ext: "webp" },
-  { name: "papercity bts", link: "", ext: "jpg" },
-  { name: "papercity full", link: "", ext: "jpg" },
-  { name: "papercity room", link: "", ext: "jpg" },
-  { name: "moia e", link: "", ext: "webp" },
+  {
+    name: "artcode",
+    link: "design-projects/Art%2520%252B%2520Code",
+    ext: "webp",
+  },
+  {
+    name: "noguchi",
+    link: base + "design-projects/Art%2520%252B%2520Code",
+    ext: "webp",
+  },
+  {
+    name: "papercity bts",
+    link: "https://www.kchuiart.com/paper-city",
+    ext: "jpg",
+  },
+  {
+    name: "papercity full",
+    link: "https://www.kchuiart.com/paper-city",
+    ext: "jpg",
+  },
+  {
+    name: "papercity room",
+    link: "https://www.kchuiart.com/paper-city",
+    ext: "jpg",
+  },
+  {
+    name: "moia e",
+    link: "https://www.kchuiart.com/current-projects",
+    ext: "webp",
+  },
   {
     name: "soundstories processing",
     link: base + "data-viz/Sound%2520Stories",
