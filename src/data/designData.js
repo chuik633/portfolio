@@ -27,7 +27,7 @@ export const designData = [
         description: `I wanted to play with texture and 3d to create text that matched the floating, meditative, and physical/natural aspects of Noguchi's work.`,
       },
       {
-        src: "2.mov",
+        src: "2.webm",
         description: `The way noguchi uses light in both his rock and akari sculptures fascinates me. 
     His sculptures are still, but when they interact with light and different 
     environments, they morph. I wanted to emulate this with text, and was initially 
@@ -35,7 +35,7 @@ export const designData = [
     I ended up going with this concept but abstracting it to give more contrast.`,
       },
       {
-        src: "3.mov",
+        src: "3.webm",
         description: `This logo focuses on the different sillhouetes of each sculpture in his museum. It changes as the user clicks to create varying logos. `,
       },
     ],

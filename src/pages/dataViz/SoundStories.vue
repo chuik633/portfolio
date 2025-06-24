@@ -79,7 +79,7 @@ const { images, processImages, codeLink, mainColor, imageFolder } =
   dvDataTitle["Sound Stories"];
 import { ref, onMounted } from "vue";
 const base = import.meta.env.BASE_URL;
-const videoSrc = `${base}assets/projects/Sound Stories/final_compressed.mp4`;
+const videoSrc = `${base}assets/projects/Sound Stories/final_compressed.webm`;
 const imageListLevel = ref(1);
 function getImageListLevel() {
   if (window.innerWidth > 1200) {
