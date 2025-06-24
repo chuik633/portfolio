@@ -1,5 +1,5 @@
 const start = `${import.meta.env.VITE_CDN_BASE}`;
-// const start = `${import.meta.env.BASE_URL}`;
+const noncdn_start = `${import.meta.env.BASE_URL}`;
 export const dvData = [
   {
     projectTitle: "Sound Stories",

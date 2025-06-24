@@ -1,22 +1,22 @@
 export const artData = [
   {
-    name: "papercity.webp",
+    name: "papercity.jpg",
     desc: "A dreamy, paper world, where people travel in floating rooms, creating art, making music,  and eating food all day. I pieced together all my mini paper rooms to build a paper city. I lit it from the back and added layers to create perspective.",
   },
   {
-    name: "paper1.webp",
+    name: "paper1.jpg",
     desc: "A process photo of building my paper world to show scale!",
   },
   {
-    name: "paper0.webp",
+    name: "paper0.jpg",
     desc: "A kitchen, library, and music room (each about 1.5 inches wide). I constructed each mini room out of paper and glue. I love seeing how light interacts with each structure.",
   },
   {
-    name: "paper.webp",
+    name: "paper.jpg",
     desc: "My first paper experiment was based off of a cell model since I imagined the little tasks of each part of the cell and thought it might be a someones whole world.",
   },
   {
-    name: "water.webp",
+    name: "water.jpg",
     desc: "I built a water box in my backyard with wood and white flex seal. I wanted to play with reflections, transparency, and water/volume as a medium in this photo project.",
   },
   {

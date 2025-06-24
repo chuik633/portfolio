@@ -86,7 +86,7 @@ import "intersection-observer";
 import VueScrollama from "vue3-scrollama";
 import * as d3 from "d3";
 import { favorites } from "../data/favorites.js";
-const profilSrc = `${import.meta.env.BASE_URL}assets/about/profile.JPG`;
+const profilSrc = `${import.meta.env.VITE_CDN_BASE}assets/about/profile.webp`;
 const numSteps = 300;
 const fontSize = ref(100);
 const yShift = ref(30);
@@ -208,7 +208,9 @@ onMounted(async () => {
     .attr(
       "src",
       (d) =>
-        `${import.meta.env.BASE_URL}assets/about/favorites/${d.name}.${d.ext}`
+        `${import.meta.env.VITE_CDN_BASE}assets/about/favorites/${d.name}.${
+          d.ext
+        }`
     )
     .attr("alt", (d) => d.name)
     .style("top", (d, i) => `${d.y0}px`)

@@ -78,7 +78,7 @@ import { dvDataTitle } from "../../data/dvData";
 const { images, processImages, codeLink, mainColor, imageFolder } =
   dvDataTitle["Sound Stories"];
 import { ref, onMounted } from "vue";
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.VITE_CDN_BASE;
 const videoSrc = `${base}assets/projects/Sound Stories/final_compressed.webm`;
 const imageListLevel = ref(1);
 function getImageListLevel() {

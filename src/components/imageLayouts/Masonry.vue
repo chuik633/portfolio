@@ -3,15 +3,14 @@
     <img
       v-for="name in props.images"
       :key="name"
-      :src="basePath + `${props.imageFolder}${name}`"
+      :src="`${props.imageFolder}${name}`"
       :alt="name"
     />
   </div>
 </template>
 <script setup>
-const basePath = import.meta.env.BASE_URL;
-defineProps({
-  images: { type: String, required: true },
+const props = defineProps({
+  images: { type: Array, required: true },
   imageFolder: { type: String, required: true },
 });
 </script>
