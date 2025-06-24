@@ -8,7 +8,7 @@
     />
   </div>
 </template>
-<script>
+<script setup>
 const basePath = import.meta.env.BASE_URL;
 defineProps({
   images: { type: String, required: true },

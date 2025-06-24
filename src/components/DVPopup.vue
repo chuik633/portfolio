@@ -21,11 +21,11 @@
     <p v-if="props.basic">
       {{ props.description }}
     </p>
-    <ImageList
+    <Masonry
       v-if="props.basic && props.processImages"
       :images="props.processImages"
       :imageFolder="props.imageFolder"
-    ></ImageList>
+    ></Masonry>
 
     <component v-if="props.basic == false" :is="currentPage" v-bind="props" />
   </div>
@@ -34,6 +34,7 @@
 import { ref, onMounted, computed } from "vue";
 import { useRouter } from "vue-router";
 import ImageList from "./imageLayouts/ImageList.vue";
+import Masonry from "./imageLayouts/Masonry.vue";
 import ImageCarousel from "./imageLayouts/ImageCarousel.vue";
 import * as d3 from "d3";
 import { isColorDark, isVideo } from "./helpers";

@@ -1,4 +1,4 @@
-const start = `${import.meta.env.BASE_URL}`;
+const start = `${import.meta.env.VITE_CDN_BASE}`;
 export const designData = [
   {
     projectTitle: "Noguchi",
