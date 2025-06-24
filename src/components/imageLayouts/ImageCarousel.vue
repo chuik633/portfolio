@@ -1,13 +1,23 @@
 <template>
   <div class="carousel-container">
     <div class="slides" :style="slideStyle">
-      <img
-        v-for="(img, idx) in images"
-        :key="idx"
-        :src="`${imageFolder}${img}`"
-        :alt="img"
-        class="slide-image"
-      />
+      <template v-for="(file, index) in images" :key="file + index">
+        <img
+          v-if="!isVideo(file)"
+          :src="`${imageFolder}${file}`"
+          :alt="file"
+          class="slide-image"
+        />
+        <video
+          v-else
+          :src="`${imageFolder}${file}`"
+          :alt="file"
+          class="slide-image"
+          muted
+          autoplay
+          loop
+        />
+      </template>
     </div>
     <button class="nav prev" @click="prevSlide">‹</button>
     <button class="nav next" @click="nextSlide">›</button>
@@ -16,6 +26,7 @@
 
 <script setup>
 import { ref, computed } from "vue";
+import { isVideo } from "../helpers";
 
 const props = defineProps({
   images: { type: Array, required: true }, // e.g. ["img1.gif", "img2.gif"]

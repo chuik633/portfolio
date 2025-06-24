@@ -1,18 +1,28 @@
 <template>
   <div class="image-list">
-    <img
-      v-for="(img, index) in images"
-      :key="index"
-      :src="`${imageFolder}${img}`"
-      :alt="img"
-      class="image-item"
-    />
+    <template v-for="(file, index) in images" :key="file + index">
+      <img
+        v-if="!isVideo(file)"
+        :src="`${imageFolder}${file}`"
+        :alt="file"
+        class="image-item"
+      />
+      <video
+        v-else
+        :src="`${imageFolder}${file}`"
+        :alt="file"
+        class="image-item"
+        muted
+        autoplay
+        loop
+      />
+    </template>
   </div>
 </template>
 
 <script setup>
 import { defineProps } from "vue";
-
+import { isVideo } from "../helpers";
 const props = defineProps({
   images: {
     type: Array,
@@ -33,7 +43,7 @@ const props = defineProps({
   overflow-x: auto;
   gap: 8px;
   min-height: 100px;
-  height: 150px;
+  height: 10px;
   align-items: stretch;
   width: 100%;
 }

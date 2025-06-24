@@ -63,8 +63,18 @@
       <h4>BACKGROUND</h4>
       <p>
         I recently finished my MS in data visualization at Parsons (’25). In my
-        undergrad at Rice (’24), I studied Math and Computer Science, but have
-        always loved visual art and working across disciplines.
+        undergrad at Rice (’24), I studied Math and Computer Science where I did
+        CS research on gene visualization and math research in algebraic
+        topology and presented at conferences like NCUWM. I love talking about
+        number theory, groups, combinatorial problems, and probably anything you
+        find interesting.
+      </p>
+      <p>
+        Growing up I thought I would be a children book illustrator, then a
+        photo journalist, then a mathematician, then a software engineer, and
+        now? I’m not quite sure, but I want do something with a little bit of
+        everything that feels both digital and physical and uses stories to
+        connect with people.
       </p>
     </div>
   </div>
@@ -125,7 +135,8 @@ function onStepEnter({ index }) {
   }
   fontSize.value = fontScale(index);
   const progress = (index - 1) / numSteps;
-  d3.select(".about-scroll").style("top", `calc( ${(1 - progress) * 100}%)`);
+  let top = (1 - progress) * 200;
+  d3.select(".about-scroll").style("top", `calc( ${top}%)`);
   yShift.value = (1 - progress ** 3) * 30;
   d3.selectAll(".img-node")
     .style("width", (d) => `${startW + (d.endW - startW) * progress}px`)
@@ -174,13 +185,14 @@ onMounted(async () => {
     d.y = d.y0;
     // d.endAngle = Math.random() * 90 - 45;
     d.endAngle = 0;
-    d.endW = Math.random() * 50 + 50;
+    d.endW = 60;
+    const side = Math.max(window.innerWidth * 0.15, 50);
     if (i % 2 == 0) {
-      d.x1 = window.innerWidth * 0.15;
+      d.x1 = side - d.endW;
       d.y1 = lefty;
       lefty += d.endW + gap;
     } else {
-      d.x1 = window.innerWidth - window.innerWidth * 0.15;
+      d.x1 = window.innerWidth - side;
       d.y1 = righty;
       righty += d.endW + gap;
     }
@@ -253,14 +265,16 @@ onMounted(async () => {
 .about-fixed {
   position: fixed;
   z-index: 1;
-  top: 100px;
-  height: calc(100vh - 80px);
+  top: 0px;
+  height: calc(100vh - 50px);
   width: 100vw;
   pointer-events: none;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 50px;
+  padding: 50px 50px 100px 20px;
+  /* background: blue; */
+  overflow-y: scroll;
 }
 .about-scroll {
   display: flex;
@@ -332,11 +346,13 @@ h4 {
   /* border: 0.1px solid black; */
 }
 .name {
+  background: var(--default-back);
   pointer-events: none;
   font-size: 80px;
   text-wrap: no-wrap;
   z-index: 1;
-  position: relative;
+  position: sticky;
+  top: 0px;
   transition: all 0.1 ease;
 }
 </style>

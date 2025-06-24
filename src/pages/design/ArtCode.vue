@@ -1,5 +1,6 @@
 <template>
   <div class="container1">
+    <p class="description">{{ props.description }}</p>
     <div class="thumbnails" v-if="images.length > 1">
       <div class="thumbnail-container" v-for="(image, i) of images" :idx="i">
         <img

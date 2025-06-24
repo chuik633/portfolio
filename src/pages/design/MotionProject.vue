@@ -1,19 +1,23 @@
 <template>
   <div class="container1">
     <p class="description">{{ props.description }}</p>
-    <img
-      v-if="!isVideo(currentImageSrc)"
-      :src="currentImageSrc"
-      @click="nextImage"
-    />
-    <video
-      autoplay
-      muted
-      loop
-      v-if="isVideo(currentImageSrc)"
-      :src="currentImageSrc"
-      @click="nextImage"
-    />
+    <transition name="fade" mode="out-in">
+      <img
+        v-if="!isVideo(currentImageSrc)"
+        :key="currentImageSrc"
+        :src="currentImageSrc"
+        @click="nextImage"
+      />
+      <video
+        v-else
+        :key="currentImageSrc"
+        autoplay
+        muted
+        loop
+        :src="currentImageSrc"
+        @click="nextImage"
+      />
+    </transition>
     <div class="thumbnails" v-if="images.length > 1">
       <div
         class="thumbnail-container"
@@ -81,6 +85,14 @@ function nextImage() {
 </script>
 
 <style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 h2 {
   margin-top: 50px;
   letter-spacing: 2px;
