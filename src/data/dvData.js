@@ -6,7 +6,7 @@ export const dvData = [
     projectLink: "https://chuik633.github.io/SoundStories/",
     date: "May 2025",
     description: `
-               This project was my thesis for my masters in Data Viz at Parsons NYC! In Sound Stories, I experimented with visualizing music, as music is a powerful story telling device that can express emotion, signify themes, and convey intensity. 
+               (STILL IN PROGRESS DEPLOYING) This project was my thesis for my masters in Data Viz at Parsons NYC! In Sound Stories, I experimented with visualizing music, as music is a powerful story telling device that can express emotion, signify themes, and convey intensity. 
                In this project, I used p5 to created audio reactive typography for the captions of films. In the backend, I built my own processing pipeline to download youtube videos, extract image data, audio data, and captions. 
                I used tools like FFTs to deconstruct the audio files and clustering on the colors of the film to get thematic color palettes. Read more on the page!
                For the backend, I used Docker, fly.io, and supabase to store the uploaded youtube data.
