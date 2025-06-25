@@ -12,7 +12,7 @@ export const dvData = [
                For the backend, I used Docker, fly.io, and supabase to store the uploaded youtube data.
                `,
     codeLink: "https://github.com/chuik633/SoundStories",
-    images: ["1.webm", "2.webm", "3.webm", "4.webm", "5.webm"],
+    images: ["full.webm", "2.webm", "3.webm", "4.webm", "5.webm"],
     processImages: [
       "wiggly_font.png",
       "blur_font.png",
