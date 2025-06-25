@@ -82,7 +82,7 @@ export const designData = [
     projectTitle: "Generative Motion Explores",
     date: "MOTION",
     description: `Playing around with different generative tools by spacetypegenerator.com, Studio DIA, and Antilli! Combined with after effects, these are so cool! `,
-    images: ["allposters_1.webm"],
+    images: ["allposters.webm"],
     processImages: [],
     imageFolder: start + "assets/motion/generative/",
     basic: true,
