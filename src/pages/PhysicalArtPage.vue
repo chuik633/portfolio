@@ -30,7 +30,7 @@ function openExternalSite() {
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  padding: 50px 80px;
+  padding: 0px 80px;
 }
 .masonry-grid {
   column-count: 3;
@@ -43,6 +43,9 @@ function openExternalSite() {
   }
 }
 @media (max-width: 600px) {
+  .physical-art-page {
+    padding: 0px 0px;
+  }
   .masonry-grid {
     column-count: 1;
   }

@@ -23,6 +23,7 @@
   justify-content: space-evenly;
   position: fixed;
   top: 0px;
+  left: 0px;
   z-index: 5;
   border-bottom: 0.4px solid black;
 }
