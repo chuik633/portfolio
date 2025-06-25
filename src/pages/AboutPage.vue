@@ -268,13 +268,14 @@ onMounted(async () => {
   position: fixed;
   z-index: 1;
   top: 0px;
+  left: 0px;
   height: calc(100vh - 50px);
   width: 100vw;
   pointer-events: none;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 50px 50px 100px 20px;
+  /* padding: 50px 50px 100px 20px; */
   /* background: blue; */
   overflow-y: scroll;
 }
