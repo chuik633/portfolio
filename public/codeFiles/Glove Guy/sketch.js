@@ -40,15 +40,15 @@ let paperTextureImg;
 //save the face data
 let face_data = {};
 const aspect = 9 / 6;
-const width = 900;
-const height = 600;
-const midWidth = (width * 2) / 3;
-const midHeight = height / 2.5;
+const width = 500;
+const height = 850;
+const midWidth = width / 2;
+const midHeight = (height * 2) / 3 - 50;
 
 //save the buttons
 const buttonWidth = 40;
 const buttonHeight = 40;
-const padding_top = 200;
+const padding_top = 80;
 const padding_left = 80;
 const buttonGap = 15;
 
@@ -59,18 +59,12 @@ function preload() {
   for (const [feature_name, count] of Object.entries(num_images)) {
     let loadedImages = [];
     for (var i = 1; i <= count; i++) {
-      loadedImages.push(
-        loadImage(
-          `${import.meta.env.BASE_URL}assets/images/${feature_name}/${i}.png`
-        )
-      );
+      loadedImages.push(loadImage(`./assets/images/${feature_name}/${i}.png`));
     }
     face_data[feature_name] = loadedImages;
   }
 
-  paperTextureImg = loadImage(
-    `${import.meta.env.BASE_URL}assets/images/textture.jpg`
-  );
+  paperTextureImg = loadImage(`./assets/images/textture.jpg`);
 }
 
 function setup() {
@@ -186,7 +180,7 @@ function draw() {
   textFont("Quicksand");
   textStyle(BOLD);
   textSize(18);
-  text("C R E A T E   A   G L O V E   G U Y", 60, 120);
+  text("C R E A T E   A   G L O V E   G U Y", 60, 40);
   textStyle(NORMAL);
   drawBody();
   createButtons(mouseX, mouseY);

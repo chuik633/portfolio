@@ -26,7 +26,7 @@ let play_button;
 let noteToIndices;
 
 function preload() {
-  mySound = loadSound("sounds/fortheyhadthingstosay.mp3");
+  mySound = loadSound("./sounds/verdis.mp3");
   texture = loadImage("textture.jpg");
 }
 

@@ -16,7 +16,7 @@
     </div>
     <p v-if="props.description">{{ props.description }}</p>
     <div class="preview-container">
-      <div class="code-container">
+      <div class="code-container" id="code-container">
         <pre class="code-text no-select">{{ codeText }}</pre>
       </div>
 
@@ -80,6 +80,9 @@
   width: fit-content;
   height: 100%;
   flex-shrink: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 iframe {
   height: 100%;
@@ -193,30 +196,42 @@ function openProject() {
 
 function resizeIframe(event) {
   const iframe = event.target;
-  const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-
-  if (!iframeDoc || !iframeDoc.body) return;
+  const doc = iframe.contentDocument || iframe.contentWindow?.document;
+  if (!doc || !doc.body) return;
 
   const container = iframe.parentElement;
-  const containerWidth = container.clientWidth;
-  const containerHeight = container.clientHeight;
+  const cW = container.clientWidth;
+  const cH = container.clientHeight;
 
-  const contentWidth = iframeDoc.body.scrollWidth;
-  let contentHeight = iframeDoc.body.scrollHeight;
+  // Natural content size
+  const w0 = doc.body.scrollWidth;
+  const h0 = doc.body.scrollHeight || cH; // fallback in empty docs
 
-  if (contentHeight === 0) contentHeight = containerHeight;
+  // Scale factors that would make each side fit
+  const fitW = cW / w0;
+  const fitH = cH / h0;
 
-  const scaleWidth = containerWidth / contentWidth;
-  const scaleHeight = containerHeight / contentHeight;
-  const scale = Math.min(scaleWidth, scaleHeight, 1);
-  console.log("CONTAINER SIZE", containerWidth, containerHeight);
+  /*  Decide which dimension is the “constraint”:
+      – If content is *wider* than the container’s aspect ratio, fit width.
+      – Otherwise fit height.
+      – Cap at 1 so we never enlarge.                           */
+  const containerAR = cW / cH;
+  const contentAR = w0 / h0;
+  const scale = Math.min(contentAR >= containerAR ? fitW : fitH, 1);
+
+  // Size on-screen after scaling
+  const w = w0 * scale;
+  const h = h0 * scale;
+
+  // Apply styles
   iframe.style.transform = `scale(${scale})`;
   iframe.style.transformOrigin = "top left";
-  iframe.style.width = `${contentWidth}px`;
-  iframe.style.height = `${contentHeight}px`;
+  iframe.style.width = `${w0}px`; // keep natural size
+  iframe.style.height = `${h0}px`;
   iframe.style.position = "relative";
 
-  const topOffset = (containerHeight - contentHeight * scale) / 2;
-  iframe.style.top = `${topOffset}px`;
+  // Centre the “loose” axis only (the one that didn’t hit the edge)
+  // iframe.style.left = `${Math.max(0, (cW - w) / 2)}px`;
+  // iframe.style.top = `${Math.max(0, (cH - h) / 2)}px`;
 }
 </script>
