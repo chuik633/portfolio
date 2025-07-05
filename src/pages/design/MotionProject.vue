@@ -10,7 +10,6 @@
       />
       <video
         v-else
-        :key="currentImageSrc"
         autoplay
         muted
         loop
@@ -69,6 +68,7 @@ const props = defineProps({
   mainColor: { type: String, required: true },
   description: { type: String, default: "" },
   images: { type: Array, required: true },
+
   processImages: { type: Array, required: false },
   logoExplores: { type: Array, required: false },
   icons: { type: Array, required: false },

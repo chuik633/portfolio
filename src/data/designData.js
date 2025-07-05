@@ -4,6 +4,9 @@ export const designData = [
     projectTitle: "MOIA (Museum of Immersive Art)",
     date: "GAME",
     images: ["1.mov", "e2.mov", "2.png", "menu.mov"],
+    links: {
+      "steam page": `https://store.steampowered.com/app/2929400/Museum_of_Immersive_Art/`,
+    },
     description: `
     An illustrated game I made with my friends, Jessica Opsahl-Ong, Theo Schweizer, and Desmond Roberts using a combo of Figma, Procreate, and Godot. 
     All of the assets are hand drawn/created to match a painting. The game follows an artist who steps into different paintings to explore platformer levels with mechanics and visuals based on each artword.

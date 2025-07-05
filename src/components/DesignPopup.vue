@@ -7,6 +7,14 @@
       </div>
       <button class="close-btn" @click="close">×</button>
     </div>
+    <button
+      class="light"
+      v-if="props.links"
+      v-for="linkinfo of Object.entries(props.links)"
+      @click="openProject(linkinfo[1])"
+    >
+      {{ linkinfo[0] }}
+    </button>
     <component v-if="props.basic" :is="currentPage" v-bind="props" />
   </div>
 </template>
@@ -17,11 +25,15 @@ import { useRouter } from "vue-router";
 import * as d3 from "d3";
 import { isColorDark, isVideo } from "./helpers";
 const router = useRouter();
-
+function openProject(link) {
+  console.log(link);
+  window.open(link, "_blank");
+}
 const props = defineProps({
   projectTitle: { type: String, required: true },
   description: { type: String, default: "" },
   date: { type: String, default: undefined },
+  links: { type: Object, required: false },
   mainColor: { type: String, required: true },
   images: { type: Array, required: true },
   logoExplores: { type: Array, required: false },
