@@ -4,6 +4,11 @@ export const designData = [
     projectTitle: "MOIA (Museum of Immersive Art)",
     date: "GAME",
     images: ["1.mov", "e2.mov", "2.png", "menu.mov"],
+    description: `
+    An illustrated game I made with my friends, Jessica Opsahl-Ong, Theo Schweizer, and Desmond Roberts using a combo of Figma, Procreate, and Godot. 
+    All of the assets are hand drawn/created to match a painting. The game follows an artist who steps into different paintings to explore platformer levels with mechanics and visuals based on each artword.
+    The first level is inspired by MC Escher and plays with gravity. The second level is based off of Van Gogh and uses light/light refilling as a mechanic. The final level is based on Dali and plays with time where players can speed/slow down different enemies that they must jump on to defeat. 
+    `,
     processImages: [
       "escherprocess.png",
       "vprocess.png",
