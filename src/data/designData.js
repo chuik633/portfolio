@@ -1,6 +1,20 @@
 const start = `${import.meta.env.VITE_CDN_BASE}`;
 export const designData = [
   {
+    projectTitle: "MOIA (Museum of Immersive Art)",
+    date: "GAME",
+    images: ["1.mov", "e2.mov", "2.png", "menu.mov"],
+    processImages: [
+      "escherprocess.png",
+      "vprocess.png",
+      "dali_process1.png",
+      "dali_process2.png",
+    ],
+    imageFolder: start + "assets/games/MOIA/",
+    basic: true,
+    mainColor: "#FFFFFF",
+  },
+  {
     projectTitle: "Noguchi",
     date: "MOTION",
     description: `Coded typography inspired by stretching lamps, icons representing morphing rock sculptures, and fun, airy layouts to showcase this museum. After effects + p5`,
