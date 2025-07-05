@@ -41,6 +41,12 @@
       </div>
     </div>
   </div>
+  <h2 v-if="props.processImages">PROCESS IMAGES</h2>
+  <Masonry
+    v-if="props.processImages"
+    :images="props.processImages"
+    :imageFolder="props.imageFolder"
+  />
   <h2 v-if="logoExplores">LOGO EXPLORES</h2>
   <div class="logo-container">
     <div v-if="logoExplores" v-for="logo in props.logoExplores">
@@ -58,6 +64,7 @@
 <script setup>
 import { ref, onMounted, computed } from "vue";
 import { isVideo } from "../../components/helpers";
+import Masonry from "../../components/imageLayouts/Masonry.vue";
 const props = defineProps({
   mainColor: { type: String, required: true },
   description: { type: String, default: "" },
