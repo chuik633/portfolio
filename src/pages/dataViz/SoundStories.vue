@@ -1,12 +1,21 @@
 <template>
   <div class="wide row">
     <div class="column">
-      <video
+      <!-- <video
         class="media-element"
         controls
+        playsinline
         autoplay="true"
         :src="videoSrc"
-      ></video>
+      ></video> -->
+      <iframe
+        class="responsive-iframe"
+        src="https://www.youtube.com/embed/26pFGbSYK4I?autoplay=1&loop=1&playlist=26pFGbSYK4I&playsinline=1"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        playsinline
+      ></iframe>
       <ImageList
         class="media-element"
         v-if="imageListLevel == 1"
@@ -139,5 +148,11 @@ img {
   .row {
     flex-direction: column;
   }
+}
+
+.responsive-iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
 }
 </style>

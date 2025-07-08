@@ -12,6 +12,7 @@
           class="thumnail"
           v-else
           mute
+          playsinline
           autoplay
           loop
           :src="props.imageFolder + image"

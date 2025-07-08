@@ -14,6 +14,7 @@
         class="image-item"
         muted
         autoplay
+        playsinline
         loop
       />
     </template>

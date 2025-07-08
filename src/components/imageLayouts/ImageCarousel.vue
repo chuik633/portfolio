@@ -13,6 +13,7 @@
           :src="`${imageFolder}${file}`"
           :alt="file"
           class="slide-image"
+          playsinline
           muted
           autoplay
           loop

@@ -11,6 +11,7 @@
       <video
         v-else
         autoplay
+        playsinline
         muted
         loop
         :src="currentImageSrc"
@@ -34,6 +35,7 @@
           v-if="isVideo(image)"
           mute
           autoplay
+          playsinline
           loop
           :src="props.imageFolder + image"
         />
@@ -49,14 +51,20 @@
   <h2 v-if="logoExplores">LOGO EXPLORES</h2>
   <div class="logo-container">
     <div v-if="logoExplores" v-for="logo in props.logoExplores">
-      <video mute autoplay loop :src="logoExploresFolder + logo.src" />
+      <video
+        mute
+        autoplay
+        playsinline
+        loop
+        :src="logoExploresFolder + logo.src"
+      />
       <p>{{ logo.description }}</p>
     </div>
   </div>
   <h2 v-if="icons">ICONS</h2>
   <div class="icon-container">
     <div v-if="icons" v-for="icon in props.icons">
-      <video mute autoplay loop :src="iconsFolder + icon" />
+      <video mute autoplay playsinline loop :src="iconsFolder + icon" />
     </div>
   </div>
 </template>

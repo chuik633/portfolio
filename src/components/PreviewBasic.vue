@@ -25,6 +25,7 @@
     />
     <video
       autoplay
+      playsinline
       muted
       loop
       v-if="isVideo(currentImageSrc)"
