@@ -11,7 +11,7 @@ export const dvData = [
                I used tools like FFTs to deconstruct the audio files and clustering on the colors of the film to get thematic color palettes. Read more on the page!
                For the backend, I used Docker, fly.io, and supabase to store the uploaded youtube data.
                `,
-    codeLink: "https://github.com/chuik633/SoundStories",
+
     images: ["full.webm", "2.webm", "3.webm", "4.webm", "5.webm"],
     processImages: [
       "wiggly_font.png",
