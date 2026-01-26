@@ -16,7 +16,7 @@ export const dvData = [
     projectTitle: "DV for Dummies",
     date: "December 2025",
     description: ``,
-    processImages: ["3.webp", "frame2.webp", "frame 4.webp"],
+    processImages: ["3.webp", "Frame 2.webp", "Frame 4.webp"],
     mainColor: "#DED839",
     imageFolder: cdnBase + "assets/projects/Dummies/",
     basic: true,
