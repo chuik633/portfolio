@@ -15,36 +15,69 @@
       <div v-if="date" class="date">{{ props.date }}</div>
     </div>
 
-    <img
-      v-if="!isVideo(currentImageSrc)"
-      :src="currentImageSrc"
+    <div
+      v-if="currentMedia"
+      :class="['media-wrapper', { tall: isTall }]"
       :style="imgStyle"
-      @mouseover="imgHover = true"
-      @mouseleave="imgHover = false"
-      @click="nextImage"
-    />
-    <video
-      autoplay
-      playsinline
-      muted
-      loop
-      v-if="isVideo(currentImageSrc)"
-      :src="currentImageSrc"
-      :style="imgStyle"
-      @mouseover="imgHover = true"
-      @mouseleave="imgHover = false"
-      @click="nextImage"
-    />
-
-    <div v-if="description" class="description hide-scrollbar">
-      {{ props.description }}
+    >
+      <img
+        v-if="!currentIsYouTube && !isVideo(currentMedia)"
+        :src="currentMedia"
+        :class="['media-content', { 'inner-border': isTall }]"
+        @load="onImgLoad"
+        @mouseover="imgHover = true"
+        @mouseleave="imgHover = false"
+        @click="nextImage"
+      />
+      <iframe
+        v-else-if="currentIsYouTube"
+        :class="['media-content', 'media-embed', { 'inner-border': isTall }]"
+        :src="youtubeEmbedUrl"
+        allow="
+          accelerometer;
+          autoplay;
+          clipboard-write;
+          encrypted-media;
+          gyroscope;
+          picture-in-picture;
+          web-share;
+        "
+        allowfullscreen
+        loading="lazy"
+        @mouseover="imgHover = true"
+        @mouseleave="imgHover = false"
+        @click.stop="nextImage"
+      ></iframe>
+      <video
+        v-else
+        :class="['media-content', { 'inner-border': isTall }]"
+        autoplay
+        playsinline
+        muted
+        loop
+        :src="currentMedia"
+        @loadedmetadata="onVideoMeta"
+        @mouseover="imgHover = true"
+        @mouseleave="imgHover = false"
+        @click="nextImage"
+      />
     </div>
+
+    <!-- <div v-if="description" class="description hide-scrollbar">
+      {{ props.description }}
+    </div> -->
   </div>
 </template>
 
 <script setup>
-import { isColorDark, isVideo } from "./helpers";
-import { ref, computed } from "vue";
+import {
+  isColorDark,
+  isVideo,
+  isYouTubeLink,
+  toYouTubeEmbedUrl,
+  resolveMediaUrl,
+} from "./helpers";
+import { ref, computed, watch } from "vue";
 const emit = defineEmits(["preview"]);
 const props = defineProps({
   projectTitle: { type: String, required: true },
@@ -53,6 +86,7 @@ const props = defineProps({
   description: { type: String, required: false },
   mainColor: { type: String, required: true },
   images: { type: Array, default: () => [] },
+  videoLink: { type: String, default: undefined },
   imageFolder: {
     type: String,
     default: `${import.meta.env.VITE_CDN_BASE}assets/sketch_images/`,
@@ -61,13 +95,49 @@ const props = defineProps({
 
 const hover = ref(false);
 const imgHover = ref(false);
+const isTall = ref(false);
 
 const idx = ref(0);
-const currentImageSrc = computed(
-  () => `${props.imageFolder}${props.images[idx.value]}`
+
+const mediaItems = computed(() => {
+  const items = [];
+  if (props.images && props.images.length) {
+    items.push(...props.images);
+  }
+  if (props.videoLink) {
+    items.push(props.videoLink);
+  }
+  return items;
+});
+
+const currentMedia = computed(() => {
+  if (!mediaItems.value.length) return "";
+  const media = mediaItems.value[idx.value % mediaItems.value.length];
+  return resolveMediaUrl(media, props.imageFolder);
+});
+
+watch(currentMedia, () => {
+  isTall.value = false;
+});
+
+const currentIsYouTube = computed(() => isYouTubeLink(currentMedia.value));
+const youtubeEmbedUrl = computed(() =>
+  currentIsYouTube.value ? toYouTubeEmbedUrl(currentMedia.value) : "",
 );
+
 function nextImage() {
-  idx.value = (idx.value + 1) % props.images.length;
+  if (mediaItems.value.length <= 1) return;
+  idx.value = (idx.value + 1) % mediaItems.value.length;
+}
+
+function onImgLoad(e) {
+  const { naturalWidth: w, naturalHeight: h } = e.target;
+  isTall.value = h > w;
+}
+
+function onVideoMeta(e) {
+  const { videoWidth: w, videoHeight: h } = e.target;
+  isTall.value = h > w;
 }
 
 const dark = isColorDark(props.mainColor);
@@ -79,9 +149,11 @@ const containerStyle = computed(() => ({
   cursor: props.projectLink ? "pointer" : "default",
 }));
 
-const imgStyle = computed(() => ({
-  border: imgHover.value ? "1px solid black" : ".3px solid black",
-}));
+const imgStyle = computed(() =>
+  isTall.value
+    ? { border: "none" }
+    : { border: imgHover.value ? "1px solid black" : ".3px solid black" },
+);
 </script>
 
 <style scoped>
@@ -96,7 +168,7 @@ const imgStyle = computed(() => ({
   width: 100%;
   aspect-ratio: 1 / 1;
 
-  padding: 50px;
+  padding: 45px;
   transition: background-color 0.2s ease;
   gap: 20px;
 }
@@ -122,5 +194,32 @@ const imgStyle = computed(() => ({
 .row {
   justify-content: space-between;
   align-items: flex-end;
+}
+.media-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.media-wrapper.tall {
+  aspect-ratio: 1 / 1;
+
+  background: transparent;
+  overflow: hidden;
+}
+.media-content {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+  background: transparent;
+}
+.media-content.inner-border {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+.media-embed {
+  width: 100%;
+  height: 100%;
 }
 </style>

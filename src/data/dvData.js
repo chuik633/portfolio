@@ -1,6 +1,39 @@
-const start = `${import.meta.env.VITE_CDN_BASE}`;
-const noncdn_start = `${import.meta.env.BASE_URL}`;
+const cdnBase = `${import.meta.env.VITE_CDN_BASE || import.meta.env.BASE_URL || "/"}`;
+const noncdn_start = `${import.meta.env.BASE_URL || "/"}`;
+
 export const dvData = [
+  {
+    projectTitle: "Holiday Puzzles",
+    date: "December 2025",
+    description: ``,
+    images: ["holiday2.webp", "holidaybox.webp", "newyears2.webp"],
+    mainColor: "#CD301E",
+    imageFolder: cdnBase + "assets/projects/HolidayPuzzle/",
+    basic: true,
+    videoLink: `${noncdn_start}assets/projects/HolidayPuzzle/video.webm`,
+  },
+  {
+    projectTitle: "DV for Dummies",
+    date: "December 2025",
+    description: ``,
+    images: ["3.webp", "frame2.webp", "frame 4.webp"],
+    mainColor: "#DED839",
+    imageFolder: cdnBase + "assets/projects/Dummies/",
+    basic: true,
+    videoLink: `${noncdn_start}assets/projects/Dummies/video.webm`,
+  },
+  {
+    projectTitle: "Resonance",
+    projectLink: "https://animatedpiano.onrender.com",
+    date: "November 2025",
+    description: `I made an animated piano! Press keys to play notes and see what happens when you build a world out of sound. 
+    I built all of the houses/hills in blender and animated them using Tone.js and THREE.js. I tried to make it feel like a film that responds to the music.`,
+    images: [],
+    mainColor: "#000000ff",
+    imageFolder: cdnBase + "assets/projects/Resonance/",
+    basic: true,
+    videoLink: `${noncdn_start}assets/projects/Resonance/video.webm`,
+  },
   {
     projectTitle: "Sound Stories",
     projectLink: "https://chuik633.github.io/SoundStories/",
@@ -22,8 +55,8 @@ export const dvData = [
       "layouts.png",
       "figma.png",
     ],
-    mainColor: "#F7F7F0",
-    imageFolder: start + "assets/projects/Sound Stories/",
+    mainColor: "#000000ff",
+    imageFolder: cdnBase + "assets/projects/Sound Stories/",
     basic: false,
   },
   {
@@ -53,7 +86,7 @@ export const dvData = [
       "4.png",
     ],
     mainColor: "#F7F7F0",
-    imageFolder: start + "assets/projects/Puzzle Race/",
+    imageFolder: cdnBase + "assets/projects/Puzzle Race/",
     basic: true,
   },
   {
@@ -67,7 +100,7 @@ export const dvData = [
 
     images: ["expand-cards.webp", "move-clusters.webp", "zoom.webp"],
     mainColor: "#E9E8E4",
-    imageFolder: start + "assets/projects/ColorSearch/",
+    imageFolder: cdnBase + "assets/projects/ColorSearch/",
     basic: true,
   },
   {
@@ -86,7 +119,7 @@ export const dvData = [
       "proteinplot.gif",
     ],
     mainColor: "#F7F7F0",
-    imageFolder: start + "assets/projects/Yelp Reviews/",
+    imageFolder: cdnBase + "assets/projects/Yelp Reviews/",
     basic: true,
   },
 
@@ -107,7 +140,7 @@ export const dvData = [
       "scroll_1.webp",
     ],
     mainColor: "#E9E8E4",
-    imageFolder: start + "assets/projects/Hats of the Smithsonian/",
+    imageFolder: cdnBase + "assets/projects/Hats of the Smithsonian/",
     basic: true,
   },
   {
@@ -121,12 +154,12 @@ export const dvData = [
     codeLink: "https://github.com/chuik633/major-studio1-code-chuik633",
     images: ["scroll.webp", "popup.webp", "snaptogrid.webp"],
     mainColor: "#07253C",
-    imageFolder: start + "assets/projects/Fish Lengths/",
+    imageFolder: cdnBase + "assets/projects/Fish Lengths/",
     basic: true,
   },
 ];
 
 export const dvDataTitle = Object.fromEntries(
-  new Map(dvData.map((d) => [d.projectTitle, d]))
+  new Map(dvData.map((d) => [d.projectTitle, d])),
 );
 console.log(dvDataTitle);

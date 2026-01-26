@@ -15,7 +15,7 @@
     </div>
     <ImageCarousel
       v-if="props.basic"
-      :images="props.images"
+      :images="mediaItems"
       :imageFolder="props.imageFolder"
     ></ImageCarousel>
     <p v-if="props.basic">
@@ -48,6 +48,7 @@ const props = defineProps({
   date: { type: String, default: undefined },
   mainColor: { type: String, required: true },
   images: { type: Array, required: true },
+  videoLink: { type: String, default: undefined },
   processImages: { type: Array, required: false },
   imageFolder: { type: String, required: true },
   basic: { type: Boolean, required: false },
@@ -75,6 +76,17 @@ function openCode() {
 function openProject() {
   window.open(props.projectLink, "_blank");
 }
+
+const mediaItems = computed(() => {
+  const items = [];
+  if (props.images && props.images.length) {
+    items.push(...props.images);
+  }
+  if (props.videoLink) {
+    items.push(props.videoLink);
+  }
+  return items;
+});
 
 // -------------- pages--------------
 import SoundStories from "../pages/dataViz/SoundStories.vue";

@@ -2,22 +2,44 @@
   <div class="carousel-container">
     <div class="slides" :style="slideStyle">
       <template v-for="(file, index) in images" :key="file + index">
-        <img
-          v-if="!isVideo(file)"
-          :src="`${imageFolder}${file}`"
-          :alt="file"
-          class="slide-image"
-        />
-        <video
-          v-else
-          :src="`${imageFolder}${file}`"
-          :alt="file"
-          class="slide-image"
-          playsinline
-          muted
-          autoplay
-          loop
-        />
+        <div :class="['slide-frame', { tall: isTall(file) }]">
+          <!-- square only if tall -->
+          <img
+            v-if="!isYouTubeLink(mediaSrc(file)) && !isVideo(mediaSrc(file))"
+            :src="mediaSrc(file)"
+            :alt="file"
+            class="slide-image"
+            @load="onImgLoad(file, $event)"
+          />
+          <iframe
+            v-else-if="isYouTubeLink(mediaSrc(file))"
+            :src="toYouTubeEmbedUrl(mediaSrc(file))"
+            :title="file"
+            class="slide-image embed"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+          <video
+            v-else
+            :src="mediaSrc(file)"
+            :alt="file"
+            class="slide-image"
+            playsinline
+            muted
+            autoplay
+            loop
+            @loadedmetadata="onVideoMeta(file, $event)"
+          />
+        </div>
       </template>
     </div>
     <button class="nav prev" @click="prevSlide">‹</button>
@@ -27,7 +49,12 @@
 
 <script setup>
 import { ref, computed } from "vue";
-import { isVideo } from "../helpers";
+import {
+  isVideo,
+  isYouTubeLink,
+  toYouTubeEmbedUrl,
+  resolveMediaUrl,
+} from "../helpers";
 
 const props = defineProps({
   images: { type: Array, required: true }, // e.g. ["img1.gif", "img2.gif"]
@@ -35,6 +62,11 @@ const props = defineProps({
 });
 
 const currentIndex = ref(0);
+const tallMap = ref({});
+
+const mediaSrc = (file) => resolveMediaUrl(file, props.imageFolder);
+
+const isTall = (file) => !!tallMap.value[file];
 
 const slideStyle = computed(() => ({
   transform: `translateX(-${currentIndex.value * 100}%)`,
@@ -49,6 +81,16 @@ function nextSlide() {
 function prevSlide() {
   currentIndex.value =
     currentIndex.value > 0 ? currentIndex.value - 1 : props.images.length - 1;
+}
+
+function onImgLoad(file, e) {
+  const { naturalWidth: w, naturalHeight: h } = e.target;
+  tallMap.value = { ...tallMap.value, [file]: h > w };
+}
+
+function onVideoMeta(file, e) {
+  const { videoWidth: w, videoHeight: h } = e.target;
+  tallMap.value = { ...tallMap.value, [file]: h > w };
 }
 </script>
 
@@ -68,12 +110,29 @@ function prevSlide() {
   display: flex;
   transition: transform 0.5s ease;
 }
-.slide-image {
+.slide-frame {
   width: calc(100% - 20px);
   flex-shrink: 0;
-  height: calc(100% - 20px);
-  object-fit: contain;
   margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 20px);
+}
+.slide-frame.tall {
+  background: black;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+.slide-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.embed {
+  border: 0;
+  width: 100%;
+  height: 100%;
 }
 .nav {
   position: absolute;

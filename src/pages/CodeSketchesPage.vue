@@ -9,6 +9,7 @@
       :mainColor="sketch.mainColor"
       :imageFolder="sketch.imageFolder"
       :images="sketch.images"
+      :videoLink="sketch.videoLink"
       @preview="handlePreview"
     />
   </div>
