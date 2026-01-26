@@ -1,5 +1,5 @@
 <template>
-  <div class="wide row">
+  <div class="wide column">
     <div class="column">
       <!-- <video
         class="media-element"
