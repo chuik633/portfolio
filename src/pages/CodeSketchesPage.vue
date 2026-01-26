@@ -1,23 +1,39 @@
 <template>
-  <div class="grid">
-    <PreviewBasic
-      v-for="(sketch, i) in p5Data"
-      :projectTitle="sketch.projectTitle"
-      :projectLink="sketch.projectLink"
-      :date="sketch.date"
-      :description="sketch.description"
-      :mainColor="sketch.mainColor"
-      :imageFolder="sketch.imageFolder"
-      :images="sketch.images"
-      :videoLink="sketch.videoLink"
-      @preview="handlePreview"
-    />
+  <div class="page">
+    <h1 class="page-title">Code Sketches</h1>
+    <div class="grid">
+      <PreviewBasic
+        v-for="(sketch, i) in p5Data"
+        :projectTitle="sketch.projectTitle"
+        :projectLink="sketch.projectLink"
+        :date="sketch.date"
+        :description="sketch.description"
+        :mainColor="sketch.mainColor"
+        :imageFolder="sketch.imageFolder"
+        :images="sketch.images"
+        :videoLink="sketch.videoLink"
+        @preview="handlePreview"
+      />
+    </div>
+    <router-view />
   </div>
-  <router-view />
 </template>
 <style scoped>
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.page-title {
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
 .grid {
-  padding: 0px 0px;
+  padding: 0px;
   display: grid;
   gap: 0;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

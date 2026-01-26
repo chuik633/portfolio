@@ -47,7 +47,7 @@ const props = defineProps({
   codeLink: { type: String, default: undefined },
   date: { type: String, default: undefined },
   mainColor: { type: String, required: true },
-  images: { type: Array, required: true },
+  images: { type: Array, required: false, default: () => [] },
   videoLink: { type: String, default: undefined },
   processImages: { type: Array, required: false },
   imageFolder: { type: String, required: true },
@@ -100,9 +100,14 @@ const pages = {
 .popup {
   --bgColor: white;
   --textColor: black;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .popup * {
   color: var(--textColor);
+  max-width: 600px;
 }
 .project-title {
   font-size: 25px;

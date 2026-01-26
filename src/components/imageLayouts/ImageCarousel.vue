@@ -42,8 +42,8 @@
         </div>
       </template>
     </div>
-    <button class="nav prev" @click="prevSlide">‹</button>
-    <button class="nav next" @click="nextSlide">›</button>
+    <button v-if="showNav" class="nav prev" @click="prevSlide">‹</button>
+    <button v-if="showNav" class="nav next" @click="nextSlide">›</button>
   </div>
 </template>
 
@@ -63,6 +63,7 @@ const props = defineProps({
 
 const currentIndex = ref(0);
 const tallMap = ref({});
+const showNav = computed(() => props.images.length > 1);
 
 const mediaSrc = (file) => resolveMediaUrl(file, props.imageFolder);
 
