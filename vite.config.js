@@ -1,8 +1,10 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 
+const base = process.env.VITE_BASE || "/"; // use env for GH Pages, default root for Render
+
 export default defineConfig({
-  base: "/portfolio/",
+  base,
 
   plugins: [vue()],
 
