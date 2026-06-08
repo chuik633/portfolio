@@ -3,15 +3,52 @@ const noncdn_start = `${import.meta.env.BASE_URL || "/"}`;
 
 export const dvData = [
   {
-    projectTitle: "Holiday Puzzles",
-    date: "December 2025",
-    description: `I created a double sided 2025-26 puzzle and sent it to my friends and family! I also coded a website where people could add when they finished the puzzle which would light up a tree/their room in the building. Everyone I sent the puzzle to was featured in the illustration!`,
-    processImages: ["holiday2.webp", "holidaybox.webp", "newyears2.webp"],
-    mainColor: "#CD301E",
-    imageFolder: cdnBase + "assets/projects/HolidayPuzzle/",
+    projectTitle: "Resonance",
+    projectLink: "https://animatedpiano.onrender.com",
+    date: "November 2025",
+    description: `I made an animated piano! Press keys to play notes and see what happens when you build a world out of sound. 
+    I built all of the houses/hills in blender and animated them using Tone.js and THREE.js. I tried to make it feel like a film that responds to the music.`,
+    images: [],
+    mainColor: "#000000ff",
+    imageFolder: cdnBase + "assets/projects/Resonance/",
     basic: true,
-    videoLink: `${noncdn_start}assets/projects/HolidayPuzzle/video.webm`,
+    videoLink: `${noncdn_start}assets/projects/Resonance/video.webm`,
   },
+  {
+    projectTitle: "Sound Stories",
+    codeLink: "https://chuik633.github.io/SoundStories/",
+    date: "May 2025",
+    description: `
+               (STILL IN PROGRESS DEPLOYING) This project was my thesis for my masters in Data Viz at Parsons NYC! In Sound Stories, I experimented with visualizing music, as music is a powerful story telling device that can express emotion, signify themes, and convey intensity. 
+               In this project, I used p5 to created audio reactive typography for the captions of films. In the backend, I built my own processing pipeline to download youtube videos, extract image data, audio data, and captions. 
+               I used tools like FFTs to deconstruct the audio files and clustering on the colors of the film to get thematic color palettes. Read more on the page!
+               For the backend, I used Docker, fly.io, and supabase to store the uploaded youtube data.
+               `,
+
+    images: ["full.webm", "2.webm", "3.webm", "4.webm", "5.webm"],
+    processImages: [
+      "wiggly_font.png",
+      "blur_font.png",
+      "strings_font.png",
+      "colors.png",
+      "colors2.png",
+      "layouts.png",
+      "figma.png",
+    ],
+    mainColor: "#000000ff",
+    imageFolder: cdnBase + "assets/projects/Sound Stories/",
+    basic: false,
+  },
+  // {
+  //   projectTitle: "Holiday Puzzles",
+  //   date: "December 2025",
+  //   description: `I created a double sided 2025-26 puzzle and sent it to my friends and family! I also coded a website where people could add when they finished the puzzle which would light up a tree/their room in the building. Everyone I sent the puzzle to was featured in the illustration!`,
+  //   processImages: ["holiday2.webp", "holidaybox.webp", "newyears2.webp"],
+  //   mainColor: "#CD301E",
+  //   imageFolder: cdnBase + "assets/projects/HolidayPuzzle/",
+  //   basic: true,
+  //   videoLink: `${noncdn_start}assets/projects/HolidayPuzzle/video.webm`,
+  // },
   {
     projectTitle: "DV for Dummies",
     date: "December 2025",
@@ -41,43 +78,6 @@ export const dvData = [
     imageFolder: cdnBase + "assets/projects/Dummies/",
     basic: true,
     videoLink: `${noncdn_start}assets/projects/Dummies/video.webm`,
-  },
-  {
-    projectTitle: "Resonance",
-    projectLink: "https://animatedpiano.onrender.com",
-    date: "November 2025",
-    description: `I made an animated piano! Press keys to play notes and see what happens when you build a world out of sound. 
-    I built all of the houses/hills in blender and animated them using Tone.js and THREE.js. I tried to make it feel like a film that responds to the music.`,
-    images: [],
-    mainColor: "#000000ff",
-    imageFolder: cdnBase + "assets/projects/Resonance/",
-    basic: true,
-    videoLink: `${noncdn_start}assets/projects/Resonance/video.webm`,
-  },
-  {
-    projectTitle: "Sound Stories",
-    projectLink: "https://chuik633.github.io/SoundStories/",
-    date: "May 2025",
-    description: `
-               (STILL IN PROGRESS DEPLOYING) This project was my thesis for my masters in Data Viz at Parsons NYC! In Sound Stories, I experimented with visualizing music, as music is a powerful story telling device that can express emotion, signify themes, and convey intensity. 
-               In this project, I used p5 to created audio reactive typography for the captions of films. In the backend, I built my own processing pipeline to download youtube videos, extract image data, audio data, and captions. 
-               I used tools like FFTs to deconstruct the audio files and clustering on the colors of the film to get thematic color palettes. Read more on the page!
-               For the backend, I used Docker, fly.io, and supabase to store the uploaded youtube data.
-               `,
-
-    images: ["full.webm", "2.webm", "3.webm", "4.webm", "5.webm"],
-    processImages: [
-      "wiggly_font.png",
-      "blur_font.png",
-      "strings_font.png",
-      "colors.png",
-      "colors2.png",
-      "layouts.png",
-      "figma.png",
-    ],
-    mainColor: "#000000ff",
-    imageFolder: cdnBase + "assets/projects/Sound Stories/",
-    basic: false,
   },
   {
     projectTitle: "Puzzle Race",
