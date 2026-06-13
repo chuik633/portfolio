@@ -6,14 +6,14 @@ export const dvData = [
     projectLink:"https://www.nytimes.com/interactive/2026/06/01/climate/gulf-oil-gas-whale-sounds.html",
     date:"June 2026",
     videoLink:`${noncdn_start}assets/projects/Whales/1.mp4`,
-    mainColor:"#030937",
+    mainColor:"#000000",
     imageFolder:cdnBase + "assets/projects/Whales/",
     basic:true,
     description:`
     Collaborated with Catrin Einhorn. Pitched and researched initial idea. Worked with scientists from NOAA and the Scripps Machine Listening Lab.
     `,
     processImages:[],
-    images:[],
+    images:['1.mp4', '5.mp4', '8.mp4', '10.mp4'],
 
   },
   {

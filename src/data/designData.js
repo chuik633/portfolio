@@ -1,6 +1,19 @@
 const start = `${import.meta.env.VITE_CDN_BASE}`;
 export const designData = [
   {
+    projectTitle: "SF Design Week Motion",
+    date: "Fall 2025",
+    images: ["1.webm", "2.webm", "3.webm", "4.webm","5.webm","6.webm"],
+    
+    description: `
+    Motion design with PACT Design Studio for SF Design Week
+    `,
+   
+    imageFolder: start + "assets/motion/Multitudes/",
+    basic: true,
+    mainColor: "#FFFFFF",
+  },
+  {
     projectTitle: "MOIA (Museum of Immersive Art)",
     date: "GAME",
     images: ["1.mov", "e2.mov", "2.png", "menu.mov"],
