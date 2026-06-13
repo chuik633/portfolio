@@ -2,12 +2,26 @@ const cdnBase = `${import.meta.env.VITE_CDN_BASE || import.meta.env.BASE_URL || 
 const noncdn_start = `${import.meta.env.BASE_URL || "/"}`;
 
 export const dvData = [
+  {projectTitle:"Rice's Whales",
+    projectLink:"https://www.nytimes.com/interactive/2026/06/01/climate/gulf-oil-gas-whale-sounds.html",
+    date:"June 2026",
+    videoLink:`${cdnBase}assets/projects/Whales/1.webm`,
+    mainColor:"#030937",
+    imageFolder:cdnBase + "assets/projects/Whales/",
+    basic:true,
+    description:`
+    Collaborated with Catrin Einhorn. Pitched and researched initial idea. Worked with scientists from NOAA and the Scripps Machine Listening Lab.
+    `,
+    processImages:[],
+    images:[],
+
+  },
   {
     projectTitle: "Resonance",
     projectLink: "https://animatedpiano.onrender.com",
     date: "November 2025",
     description: `I made an animated piano! Press keys to play notes and see what happens when you build a world out of sound. 
-    I built all of the houses/hills in blender and animated them using Tone.js and THREE.js. I tried to make it feel like a film that responds to the music.`,
+    I built the houses/hills in blender and animated them using Tone.js and THREE.js. I tried to make it feel like a film that responds to the music.`,
     images: [],
     mainColor: "#000000ff",
     imageFolder: cdnBase + "assets/projects/Resonance/",
