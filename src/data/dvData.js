@@ -5,7 +5,7 @@ export const dvData = [
   {projectTitle:"Rice's Whales",
     projectLink:"https://www.nytimes.com/interactive/2026/06/01/climate/gulf-oil-gas-whale-sounds.html",
     date:"June 2026",
-    videoLink:`${cdnBase}assets/projects/Whales/1.webm`,
+    videoLink:`${noncdn_start}assets/projects/Whales/1.mp4`,
     mainColor:"#030937",
     imageFolder:cdnBase + "assets/projects/Whales/",
     basic:true,

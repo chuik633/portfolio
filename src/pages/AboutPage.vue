@@ -22,11 +22,11 @@
 
     <h4>BACKGROUND</h4>
     <p>
+      I'm currently at the New York times where I've covered stories on <a href="https://www.nytimes.com/interactive/2026/06/01/climate/gulf-oil-gas-whale-sounds.html">rare whales</a>,
+      <a href="https://www.nytimes.com/interactive/2026/04/30/us/politics/voting-rights-act-black-population-congress.html">the Voting Rights act</a>, and <a href="https://www.nytimes.com/by/katherine-chui">more...</a>.
 
-      I recently finished my MS in data visualization at Parsons ('25). In my
-      undergrad at Rice ('24), I studied Math and Computer Science where I did
-      CS research on gene visualization and math research in algebraic topology
-      and presented at conferences like NCUWM. I love talking about number
+      Before that, I got myMS in data visualization at Parsons ('25) and studied math and computer science at Rice University ('24).
+      There, I did research on gene visualization and algebraic topology. I love talking about sound, experimenting with light, 
       theory, groups, combinatorial problems, and probably anything you find
       interesting.
     </p>
