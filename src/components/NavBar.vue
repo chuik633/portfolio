@@ -30,7 +30,7 @@
 .nav-link,
 .router-link-exact-active {
   text-align: center;
-  font-size: 10px;
+  font-size: 12px;
   font-style: normal;
   display: flex;
   align-items: flex-end;

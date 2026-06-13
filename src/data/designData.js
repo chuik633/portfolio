@@ -3,7 +3,7 @@ export const designData = [
   {
     projectTitle: "SF Design Week Motion",
     date: "Fall 2025",
-    images: ["1.webm", "2.webm", "3.webm", "4.webm","5.webm","6.webm"],
+    images: ["4.webm","3.webm","1.webm",  "5.webm","6.webm","2.webm"],
     
     description: `
     Motion design with PACT Design Studio for SF Design Week
