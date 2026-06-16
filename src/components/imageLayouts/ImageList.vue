@@ -8,6 +8,7 @@
           :src="mediaSrc(file)"
           :alt="file"
           class="image-item"
+          loading="lazy"
           @load="onImgLoad(file, $event)"
         />
         <iframe
@@ -33,9 +34,10 @@
           :alt="file"
           class="image-item"
           muted
-          autoplay
           playsinline
           loop
+          preload="metadata"
+          autoplay
           @loadedmetadata="onVideoMeta(file, $event)"
         />
       </div>

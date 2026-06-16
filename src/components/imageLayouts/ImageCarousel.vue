@@ -9,6 +9,7 @@
             :src="mediaSrc(file)"
             :alt="file"
             class="slide-image"
+            loading="lazy"
             @load="onImgLoad(file, $event)"
           />
           <iframe
@@ -35,8 +36,9 @@
             class="slide-image"
             playsinline
             muted
-            autoplay
             loop
+            :autoplay="index === currentIndex"
+            :preload="index === currentIndex ? 'auto' : 'none'"
             @loadedmetadata="onVideoMeta(file, $event)"
           />
         </div>

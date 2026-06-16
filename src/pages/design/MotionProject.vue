@@ -14,6 +14,7 @@
         playsinline
         muted
         loop
+        preload="auto"
         :src="currentImageSrc"
         @click="nextImage"
       />
@@ -29,14 +30,16 @@
           class="thumnail"
           v-if="!isVideo(image)"
           :src="props.imageFolder + image"
+          loading="lazy"
         />
         <video
           class="thumnail"
           v-if="isVideo(image)"
-          mute
+          muted
           autoplay
           playsinline
           loop
+          preload="metadata"
           :src="props.imageFolder + image"
         />
       </div>
@@ -52,10 +55,11 @@
   <div class="logo-container">
     <div v-if="logoExplores" v-for="logo in props.logoExplores">
       <video
-        mute
+        muted
         autoplay
         playsinline
         loop
+        preload="metadata"
         :src="logoExploresFolder + logo.src"
       />
       <p>{{ logo.description }}</p>
@@ -64,7 +68,7 @@
   <h2 v-if="icons">ICONS</h2>
   <div class="icon-container">
     <div v-if="icons" v-for="icon in props.icons">
-      <video mute autoplay playsinline loop :src="iconsFolder + icon" />
+      <video muted autoplay playsinline loop preload="metadata" :src="iconsFolder + icon" />
     </div>
   </div>
 </template>

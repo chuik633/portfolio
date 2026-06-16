@@ -5,6 +5,7 @@
       :key="name"
       :src="`${props.imageFolder}${name}`"
       :alt="name"
+      loading="lazy"
     />
   </div>
 </template>

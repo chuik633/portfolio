@@ -24,6 +24,7 @@
         v-if="!currentIsYouTube && !isVideo(currentMedia)"
         :src="currentMedia"
         :class="['media-content', { 'inner-border': isTall }]"
+        loading="lazy"
         @load="onImgLoad"
         @mouseover="imgHover = true"
         @mouseleave="imgHover = false"
@@ -55,6 +56,7 @@
         playsinline
         muted
         loop
+        preload="metadata"
         :src="currentMedia"
         @loadedmetadata="onVideoMeta"
         @mouseover="imgHover = true"

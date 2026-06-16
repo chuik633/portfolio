@@ -69,8 +69,8 @@
     motion blur, and repitition). Below are some of the breakdowns of how I
     converted the audio => fonts.
   </p>
-  <img :src="imageFolder + 'blur_font.png'" />
-  <img :src="imageFolder + 'strings_font.png'" />
+  <img :src="imageFolder + 'blur_font.png'" loading="lazy" />
+  <img :src="imageFolder + 'strings_font.png'" loading="lazy" />
   <p>
     Since I wanted the colors/vibe of each page to match each film, I experiment
     with different methods for extracting colors from each scene.

@@ -1,27 +1,20 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import AboutPage from "../pages/AboutPage.vue";
-import DataVizPage from "../pages/DataVizPage.vue";
-import CodeSketchesPage from "../pages/CodeSketchesPage.vue";
-import PhysicalArtPage from "../pages/PhysicalArtPage.vue";
-import CodePopup from "../components/CodePopup.vue";
-import DesignPage from "../pages/DesignPage.vue";
 import { p5Data } from "../data/p5Data.js";
 import { dvData } from "../data/dvData.js";
 import { designData } from "../data/designData.js";
-import DVPopup from "../components/DVPopup.vue";
-import DesignPopup from "../components/DesignPopup.vue";
 
 const routes = [
   { path: "/", name: "About", component: AboutPage },
   {
     path: "/data-viz",
     name: "DataViz",
-    component: DataVizPage,
+    component: () => import("../pages/DataVizPage.vue"),
     children: [
       {
         path: ":title",
         name: "DVPopup",
-        component: DVPopup,
+        component: () => import("../components/DVPopup.vue"),
         props: (route) => {
           const props = route.params;
           const title = decodeURIComponent(props.title);
@@ -38,12 +31,12 @@ const routes = [
   {
     path: "/design-projects",
     name: "DesignProjects",
-    component: DesignPage,
+    component: () => import("../pages/DesignPage.vue"),
     children: [
       {
         path: ":title",
         name: "DesignPopup",
-        component: DesignPopup,
+        component: () => import("../components/DesignPopup.vue"),
         props: (route) => {
           const props = route.params;
           const title = decodeURIComponent(props.title);
@@ -61,12 +54,12 @@ const routes = [
   {
     path: "/code-sketches",
     name: "CodeSketches",
-    component: CodeSketchesPage,
+    component: () => import("../pages/CodeSketchesPage.vue"),
     children: [
       {
         path: ":title",
         name: "SketchPopup",
-        component: CodePopup,
+        component: () => import("../components/CodePopup.vue"),
         props: (route) => {
           const props = route.params;
           const title = decodeURIComponent(props.title);
@@ -84,7 +77,7 @@ const routes = [
       },
     ],
   },
-  { path: "/physical-art", name: "PhysicalArt", component: PhysicalArtPage },
+  { path: "/physical-art", name: "PhysicalArt", component: () => import("../pages/PhysicalArtPage.vue") },
 ];
 
 export default createRouter({

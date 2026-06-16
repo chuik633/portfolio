@@ -6,7 +6,7 @@
     </button>
     <div class="masonry-grid">
       <div v-for="(art, i) in artData" :key="art.name" class="art-item">
-        <img :src="basePath + art.name" :alt="art.name" />
+        <img :src="basePath + art.name" :alt="art.name" loading="lazy" />
         <div class="overlay">
           <p>{{ art.desc }}</p>
         </div>
