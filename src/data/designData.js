@@ -11,21 +11,24 @@ export const designData = [
    
     imageFolder: start + "assets/motion/Multitudes/",
     basic: true,
-    mainColor: "#ECE4E0",
+    mainColor: "#E5DFD5",
   },
   {
-    projectTitle: "Creative Development - Math + Art ",
+    projectTitle: "Math Art Branding",
     date: "Winter 2025",
-    images: ['sketches.png','poster.webm','circleposter.webm','kapow.webm'],
+    images: ['sketch.png','cycloid.gif', 'functions.gif','poster1.gif','circleposter.webm','kapow.webm'],
     
     description: `
     Collaboration with PACT Design Studio on the brand identity and motion for a math company. I coded animations based on different math concepts, 
     and tested out different designs grounded in math! A very fun combo of my interests.
     `,
-   
+   links:{
+    "experiments": `https://mathgraphics.onrender.com
+`,
+   },
     imageFolder: start + "assets/motion/MathGraphics/",
     basic: true,
-    mainColor: "#00000",
+    mainColor: "#D9D9D9",
   },
   {
     projectTitle: "Memaro - Motion Design",
