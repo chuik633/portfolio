@@ -21,11 +21,13 @@ export const designData = [
     description: `
     Collaboration with PACT Design Studio on the brand identity and motion for a math company. I coded animations based on different math concepts, 
     and tested out different designs grounded in math! A very fun combo of my interests.
+
+    Some thoughts: how can I use an ellipse to derive shapes and badges? What typography was a function, how can it go from simple to refined using limits? What about polar coordinates? Fractals? Graph theory? Symmetries? 
+    Patterns, questions, visual concepts in math are beautiful. 
     `,
-   links:{
-    "experiments": `https://mathgraphics.onrender.com
-`,
-   },
+    links:{
+      "experiments": `https://mathgraphics.onrender.com`,
+    },
     imageFolder: start + "assets/motion/MathGraphics/",
     basic: true,
     mainColor: "#D9D9D9",
