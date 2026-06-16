@@ -16,7 +16,7 @@ export const designData = [
   {
     projectTitle: "Math Art Branding",
     date: "Winter 2025",
-    images: ['sketch.png','cycloid.gif', 'functions.gif','poster1.gif','circleposter.webm','kapow.webm'],
+    images: ['circleposter.webm','cycloid.gif','sketch.png', 'functions.gif','kapow.webm'],
     
     description: `
     Collaboration with PACT Design Studio on the brand identity and motion for a math company. I coded animations based on different math concepts, 
