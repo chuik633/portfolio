@@ -11,7 +11,7 @@ export const designData = [
    
     imageFolder: start + "assets/motion/Multitudes/",
     basic: true,
-    mainColor: "#FFFFFF",
+    mainColor: "#F8f8f8",
   },
   {
     projectTitle: "Creative Development - Math + Art ",
@@ -19,13 +19,13 @@ export const designData = [
     images: ['sketches.png','poster.mov','circleposter.mp4','kapow.webm'],
     
     description: `
-    Collaboration with PACT Design Studio on the brand identity and motion for a math company. Coded animations based on different math concepts.
-    Explored the intersection between math and art.
+    Collaboration with PACT Design Studio on the brand identity and motion for a math company. I coded animations based on different math concepts, 
+    and tested out different designs grounded in math! A very fun combo of my interests.
     `,
    
     imageFolder: start + "assets/motion/MathGraphics/",
     basic: true,
-    mainColor: "#00000",
+    mainColor: "#000000",
   },
   {
     projectTitle: "Memaro - Motion Design",
@@ -36,7 +36,7 @@ export const designData = [
     images: ['sdi.webm', 'urge.webm', 'vdo.webm'],
     
     description: `
-    Motion design with Memaro data visualization design studio! Worked on animated case studies and brand concept design.
+    Motion design with Memaro data visualization design studio! Animated case studies and brand concept design.
     `,
    
     imageFolder: start + "assets/motion/memaro/",
