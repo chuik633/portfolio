@@ -102,25 +102,19 @@ function onVideoMeta(file, e) {
   position: relative;
   overflow-x: hidden;
   overflow-y: visible;
-  height: 100%;
-  min-height: 40vh;
   width: 100%;
-
   display: block;
 }
 .slides {
-  height: 100%;
   display: flex;
   transition: transform 0.5s ease;
 }
 .slide-frame {
-  width: calc(100% - 20px);
+  width: 100%;
   flex-shrink: 0;
-  margin: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100% - 20px);
 }
 .slide-frame.tall {
   background: black;
@@ -129,13 +123,14 @@ function onVideoMeta(file, e) {
 }
 .slide-image {
   max-width: 100%;
-  max-height: 100%;
+  max-height: 65vh;
   object-fit: contain;
 }
 .embed {
   border: 0;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 65vh;
 }
 .nav {
   position: absolute;

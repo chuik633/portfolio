@@ -3,6 +3,7 @@ export const p5Data = [
   {
     projectTitle: "Grey Day",
     projectLink: undefined,
+    favorite:'true',
     date: "2024",
     description: "click on the :/ face to play a song",
     mainColor: "#F4F4F4",

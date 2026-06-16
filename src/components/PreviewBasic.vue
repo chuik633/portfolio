@@ -205,7 +205,6 @@ const imgStyle = computed(() =>
 }
 .media-wrapper.tall {
   aspect-ratio: 1 / 1;
-
   background: transparent;
   overflow: hidden;
 }

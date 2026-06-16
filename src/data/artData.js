@@ -8,10 +8,12 @@ export const artData = [
     desc: "A process photo of building my paper world to show scale!",
   },
   {
+
     name: "paper0.jpg",
     desc: "A kitchen, library, and music room (each about 1.5 inches wide). I constructed each mini room out of paper and glue. I love seeing how light interacts with each structure.",
   },
   {
+    key:'paperCell',
     name: "paper.jpg",
     desc: "My first paper experiment was based off of a cell model since I imagined the little tasks of each part of the cell and thought it might be a someones whole world.",
   },

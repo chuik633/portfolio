@@ -2,7 +2,9 @@ const cdnBase = `${import.meta.env.VITE_CDN_BASE || import.meta.env.BASE_URL || 
 const noncdn_start = `${import.meta.env.BASE_URL || "/"}`;
 
 export const dvData = [
-  {projectTitle:"Rice's Whales",
+  {
+    projectTitle:"Rice's Whales",
+    favorite:'true',
     projectLink:"https://www.nytimes.com/interactive/2026/06/01/climate/gulf-oil-gas-whale-sounds.html",
     date:"June 2026",
     videoLink:`${noncdn_start}assets/projects/Whales/1.mp4`,
@@ -30,6 +32,7 @@ export const dvData = [
   },
   {
     projectTitle: "Sound Stories",
+    favorite:'true',
     codeLink: "https://chuik633.github.io/SoundStories/",
     date: "May 2025",
     description: `

@@ -120,23 +120,23 @@ h2 {
 .container1 {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  gap: 10px;
-  flex-align: flex-start;
+  gap: 12px;
 }
 img,
 video {
   border: 0.1px solid black;
 }
-.container1 video {
-  max-height: 70vh;
-  width: fit-content !important;
+.container1 > img,
+.container1 > video {
+  max-height: 55vh;
   max-width: 100%;
+  width: auto;
+  object-fit: contain;
 }
 .thumbnails {
   display: flex;
   gap: 10px;
-  align-items: flex-start; /* key to stop stretching */
+  align-items: flex-start;
 }
 
 .thumbnail-container {
@@ -160,12 +160,16 @@ video {
 .logo-container {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 16px;
 }
 .logo-container div {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+.logo-container video {
+  max-height: 45vh;
+  object-fit: contain;
 }
 
 .icon-container {

@@ -19,6 +19,32 @@
         &nbsp;- {{ fav.desc }}
       </li>
     </ul>
+    <!-- <div class="favorites-section">
+    <div class="favorites-grid">
+      <PreviewBasic
+        v-for="project in cardFavorites"
+        :key="project.projectTitle"
+        :projectTitle="project.projectTitle"
+        :date="project.date"
+        :description="project.description"
+        :mainColor="project.mainColor"
+        :imageFolder="project.imageFolder"
+        :images="project.images"
+        :videoLink="project.videoLink"
+        @preview="handlePreview(project)"
+      />
+      <div
+        v-for="art in artFavorites"
+        :key="art.name"
+        class="art-item"
+      >
+        <img :src="artBase + art.name" :alt="art.name" loading="lazy" />
+        <div class="art-overlay">
+          <p>{{ art.desc }}</p>
+        </div>
+      </div>
+    </div>
+    </div> -->
 
     <h4>BACKGROUND</h4>
     <p>
@@ -32,21 +58,45 @@
       
       I want to tell stories that feel tangible and resonant.
     </p>
-    <p>
-      <!-- Growing up I thought I would be a children book illustrator, then a photographer, then a mathematician, and now? I'm
-      not quite sure, but I want do something with a little bit of everything
-      that feels both digital and physical and uses stories to connect with
-      people. -->
-    </p>
   </div>
+
+ 
   
 </template>
 
 <script setup>
 import { useRouter } from "vue-router";
+import PreviewBasic from "../components/PreviewBasic.vue";
+import { dvData } from "../data/dvData.js";
+import { designData } from "../data/designData.js";
+import { p5Data } from "../data/p5Data.js";
+import { artData } from "../data/artData.js";
 
 const router = useRouter();
 const profilSrc = `${import.meta.env.VITE_CDN_BASE}assets/about/profile.webp`;
+const artBase = import.meta.env.VITE_CDN_BASE + "assets/physicalArt/";
+
+const cardFavorites = [
+  ...dvData.filter((d) => d.favorite === "true").map((d) => ({ ...d, _source: "dv" })),
+  ...designData.filter((d) => d.favorite === "true").map((d) => ({ ...d, _source: "design" })),
+  ...p5Data.filter((d) => d.favorite === "true").map((d) => ({ ...d, _source: "p5" })),
+];
+
+const artFavorites = artData.filter((d) => d.favorite === "true");
+
+const popupRoutes = {
+  dv: "DVPopup",
+  design: "DesignPopup",
+  p5: "SketchPopup",
+};
+
+function handlePreview(project) {
+  const routeName = popupRoutes[project._source];
+  router.push({
+    name: routeName,
+    params: { title: encodeURIComponent(project.projectTitle) },
+  });
+}
 
 const favProjects = [
 { label: "Whales", desc: "a story I pitched at the NYT on the sounds of oil and gas surveys", external: "https://www.nytimes.com/interactive/2026/06/01/climate/gulf-oil-gas-whale-sounds.html", title: "Dive Into a Very Noisy Sea With Some Very Rare Whales"},
@@ -135,6 +185,46 @@ h4 {
   font-weight: 700;
 }
 
+.favorites-section {
+  width: 80vw;
+  margin-top: 40px;
+  margin-bottom: -200px;
+}
+.favorites-grid {
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(3, 1fr);
+}
+.art-item {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border: 0.1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.art-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.art-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: #fbfaf7c0;
+  border: 0.5px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  padding: 2rem;
+}
+.art-item:hover .art-overlay {
+  opacity: 1;
+}
+
 @media (max-width: 600px) {
   .intro-row {
     flex-direction: column;
@@ -146,6 +236,9 @@ h4 {
   li,
   li h5 {
     font-size: 11px;
+  }
+  .favorites-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>

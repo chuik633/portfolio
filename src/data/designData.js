@@ -26,7 +26,7 @@ export const designData = [
     Patterns, questions, visual concepts in math are beautiful. 
     `,
     links:{
-      "experiments": `https://mathgraphics.onrender.com`,
+      "see experiments": `https://mathgraphics.onrender.com`,
     },
     imageFolder: start + "assets/motion/MathGraphics/",
     basic: true,
@@ -49,6 +49,7 @@ export const designData = [
     mainColor: "#FFFFFF",
   },
   {
+    favorite:'true',
     projectTitle: "MOIA (Museum of Immersive Art)",
     date: "GAME",
     images: ["1.mov", "e2.mov", "2.png", "menu.mov"],
@@ -72,6 +73,7 @@ export const designData = [
   },
   {
     projectTitle: "Noguchi",
+    favorite:'true',
     date: "MOTION",
     description: `Coded typography inspired by stretching lamps, icons representing morphing rock sculptures, and fun, airy layouts to showcase this museum. After effects + p5`,
     images: [
