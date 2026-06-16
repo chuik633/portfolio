@@ -2,14 +2,44 @@ const start = `${import.meta.env.VITE_CDN_BASE}`;
 export const designData = [
   {
     projectTitle: "SF Design Week Motion",
-    date: "Fall 2025",
+    date: "Sprint 2026",
     images: ["4.webm","3.webm","1.webm",  "5.webm","6.webm","2.webm"],
     
     description: `
-    Motion design with PACT Design Studio for SF Design Week
+    Motion design with PACT Design Studio for SF Design Week!
     `,
    
     imageFolder: start + "assets/motion/Multitudes/",
+    basic: true,
+    mainColor: "#FFFFFF",
+  },
+  {
+    projectTitle: "Creative Development - Math + Art ",
+    date: "Winter 2025",
+    images: ['sketches.png','poster.mov','circleposter.mp4','kapow.webm'],
+    
+    description: `
+    Collaboration with PACT Design Studio on the brand identity and motion for a math company. Coded animations based on different math concepts.
+    Explored the intersection between math and art.
+    `,
+   
+    imageFolder: start + "assets/motion/MathGraphics/",
+    basic: true,
+    mainColor: "#00000",
+  },
+  {
+    projectTitle: "Memaro - Motion Design",
+    date: "Fall 2025",
+    links:{
+      "Memaro website": `https://www.memaro.studio/`,
+    },
+    images: ['sdi.webm', 'urge.webm', 'vdo.webm'],
+    
+    description: `
+    Motion design with Memaro data visualization design studio! Worked on animated case studies and brand concept design.
+    `,
+   
+    imageFolder: start + "assets/motion/memaro/",
     basic: true,
     mainColor: "#FFFFFF",
   },

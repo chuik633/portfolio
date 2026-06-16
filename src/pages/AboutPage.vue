@@ -23,21 +23,23 @@
     <h4>BACKGROUND</h4>
     <p>
       I'm currently at the New York times where I've covered stories on <a href="https://www.nytimes.com/interactive/2026/06/01/climate/gulf-oil-gas-whale-sounds.html">rare whales</a>,
-      <a href="https://www.nytimes.com/interactive/2026/04/30/us/politics/voting-rights-act-black-population-congress.html">the Voting Rights act</a>, and <a href="https://www.nytimes.com/by/katherine-chui">more...</a>.
+      <a href="https://www.nytimes.com/interactive/2026/04/30/us/politics/voting-rights-act-black-population-congress.html">the Voting Rights act</a>, 
+      <a href="https://www.nytimes.com/interactive/2026/06/16/magazine/jeffrey-epstein-death-final-days.html">Epstein's death</a>, and <a href="https://www.nytimes.com/by/katherine-chui">more...</a>.
 
-      Before that, I got myMS in data visualization at Parsons ('25) and studied math and computer science at Rice University ('24).
+      Before that, I got my MS in data visualization at Parsons ('25) and studied math and computer science at Rice University ('24).
       There, I did research on gene visualization and algebraic topology. I love talking about sound, experimenting with light, 
-      theory, groups, combinatorial problems, and probably anything you find
-      interesting.
+      number theory, groups, combinatorial problems, and probably anything you find interesting.
+      
+      I want to tell stories that feel tangible and resonant.
     </p>
     <p>
-      <!-- Growing up I thought I would be a children book illustrator, then a photo
-      journalist, then a mathematician, then a software engineer, and now? I'm
+      <!-- Growing up I thought I would be a children book illustrator, then a photographer, then a mathematician, and now? I'm
       not quite sure, but I want do something with a little bit of everything
       that feels both digital and physical and uses stories to connect with
       people. -->
     </p>
   </div>
+  
 </template>
 
 <script setup>
@@ -47,7 +49,8 @@ const router = useRouter();
 const profilSrc = `${import.meta.env.VITE_CDN_BASE}assets/about/profile.webp`;
 
 const favProjects = [
-  { label: "SoundStories", desc: "my thesis visualizing the sound behind films", route: "DVPopup", title: "Sound Stories" },
+{ label: "Whales", desc: "a story I pitched at the NYT on the sounds of oil and gas surveys", external: "https://www.nytimes.com/interactive/2026/06/01/climate/gulf-oil-gas-whale-sounds.html", title: "Dive Into a Very Noisy Sea With Some Very Rare Whales"},
+  { label: "SoundStories", desc: "visualizing the sound behind films", route: "DVPopup", title: "Sound Stories" },
   { label: "Grey Day", desc: "a digital music card for someone having a grey-ish day", route: "SketchPopup", title: "Grey Day" },
   { label: "MOIA", desc: "a platformer game in godot where art pieces come to life", external: "https://www.kchuiart.com/current-projects" },
   { label: "Paper City", desc: "a 3D paper world I built (that I would like to live in)", external: "https://www.kchuiart.com/paper-city" },
@@ -69,6 +72,7 @@ function openLink(fav) {
   gap: 10px;
   max-width: 500px;
   margin: 0 auto;
+  margin-bottom: 200px;
 
 }
 h1{
